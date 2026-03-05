@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+.featured-dishes {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.featured-dishes h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.featured-dishes .subtitle {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.dish-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.dish-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.dish-card:hover {
+  transform: translateY(-5px);
+}
+
+.dish-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.dish-card h3 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.cuisine {
+  font-size: 0.95em;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.rating {
+  font-size: 0.95em;
+  color: #ff9800;
+  margin-bottom: 5px;
+}
+
+.price {
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e64a19;
+}
+
+@media (max-width: 768px) {
+  .dish-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}

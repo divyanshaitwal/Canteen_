@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - CanteenGo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/1herosec.css" />
+  <link rel="stylesheet" href="css/17question.css" />
+  <link rel="stylesheet" href="css/18footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="navbar-container">
+        <div class="logo">
+            <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="url(#logoGradient)"/>
+                <path d="M16 8C12.6863 8 10 10.6863 10 14C10 17.3137 12.6863 20 16 20C19.3137 20 22 17.3137 22 14C22 10.6863 19.3137 8 16 8Z" fill="white"/>
+                <path d="M16 22C14.8954 22 14 22.8954 14 24C14 25.1046 14.8954 26 16 26C17.1046 26 18 25.1046 18 24C18 22.8954 17.1046 22 16 22Z" fill="white"/>
+                <defs>
+                    <linearGradient id="logoGradient" x1="0" y1="0" x2="32" y2="32">
+                        <stop offset="0%" stop-color="#667eea"/>
+                        <stop offset="50%" stop-color="#764ba2"/>
+                        <stop offset="100%" stop-color="#f093fb"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="logo-text">CanteenGo</span>
+        </div>
+
+        <nav class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+                <li><a href="1herosec.html" class="nav-link">Home</a></li>
+                <li><a href="10menu.html" class="nav-link">Menu</a></li>
+                <li><a href="8restaurants.html" class="nav-link">Restaurants</a></li>
+                <li><a href="11about.html" class="nav-link">About Us</a></li>
+                <li><a href="6customer.html" class="nav-link">Feedback</a></li>
+                <li><a href="17question.html" class="nav-link active">Help Center</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="icon-btn" id="searchBtn" aria-label="Search">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18 18l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <a class="cart-link" href="#" onclick="openCart()">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1h3l2.68 13.39a1 1 0 0 0 1 .61h9.72a1 1 0 0 0 1-.78l1.5-7.5a1 1 0 0 0-1-.72H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8" cy="18" r="1" fill="currentColor"/>
+                    <circle cx="16" cy="18" r="1" fill="currentColor"/>
+                </svg>
+                <span class="cart-badge" id="cart-count">0</span>
+            </a>
+            <button class="btn-order">Order Now</button>
+        </div>
+
+        <button class="hamburger" id="navToggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </div>
+</header>
+
+  <!-- Header Section -->
+  <section class="contact-header">
+    <div class="header-content">
+      <div class="header-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Get in Touch
+      </div>
+      <h1 class="header-title">Contact <span class="gradient-text">CanteenGo</span></h1>
+      <p class="header-subtitle">We're here to help you with all your campus food delivery needs</p>
+    </div>
+  </section>
+
+  <!-- Main Contact Section -->
+  <section class="contact-main">
+    <div class="contact-container">
+      
+      <!-- Our Location -->
+      <div class="contact-card location-card">
+        <div class="card-header">
+          <div class="card-icon location-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h2 class="card-title">Our Location</h2>
+        </div>
+        <p class="card-description">Map and directions to our office</p>
+        
+        <div class="location-details">
+          <div class="location-address">
+            <h3>CanteenGo Headquarters</h3>
+            <p>Techspire College Campus</p>
+            <p>Student Center, Building A</p>
+            <p>2nd Floor, Office 201</p>
+            <p>City, State 12345</p>
+          </div>
+          
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3229.3522942976947!2d85.33237997507996!3d27.687426776193973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x23bb4647745b3c5%3A0x188d79956864ba46!2sTechspire%20College!5e1!3m2!1sen!2snp!4v1771000982603!5m2!1sen!2snp" 
+              height="300" 
+              style="border:0; border-radius: 16px;" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+          
+          <div class="directions-links">
+            <a href="https://maps.google.com" target="_blank" class="direction-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Get Directions
+            </a>
+            <a href="#" class="direction-btn secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              View on Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Hours -->
+      <div class="contact-card hours-card">
+        <div class="card-header">
+          <div class="card-icon hours-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h2 class="card-title">Business Hours</h2>
+        </div>
+        <p class="card-description">Working days and support hours</p>
+        
+        <div class="hours-schedule">
+          <div class="schedule-section">
+            <h3 class="schedule-title">Order Hours</h3>
+            <div class="hours-list">
+              <div class="hours-row">
+                <span class="day">Monday - Friday</span>
+                <span class="time">7:00 AM - 10:00 PM</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Saturday</span>
+                <span class="time">8:00 AM - 11:00 PM</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Sunday</span>
+                <span class="time">9:00 AM - 9:00 PM</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="schedule-section">
+            <h3 class="schedule-title">Customer Support</h3>
+            <div class="hours-list">
+              <div class="hours-row">
+                <span class="day">Monday - Friday</span>
+                <span class="time">8:00 AM - 8:00 PM</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Saturday - Sunday</span>
+                <span class="time">9:00 AM - 6:00 PM</span>
+              </div>
+              <div class="hours-row special">
+                <span class="day">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="currentColor"/>
+                  </svg>
+                  Emergency Support
+                </span>
+                <span class="time">24/7 Available</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="hours-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="currentColor"/>
+            </svg>
+            <span>Hours may vary during holidays and special events</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Contacts -->
+      <div class="contact-card team-card">
+        <div class="card-header">
+          <div class="card-icon team-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8.5 11C10.7091 11 12.5 9.20914 12.5 7C12.5 4.79086 10.7091 3 8.5 3C6.29086 3 4.5 4.79086 4.5 7C4.5 9.20914 6.29086 11 8.5 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 8V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M23 11H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h2 class="card-title">Team Contacts</h2>
+        </div>
+        <p class="card-description">Phone numbers and department contacts</p>
+        
+        <div class="team-contacts">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <h4>Main Reception</h4>
+              <p class="contact-value">(555) 123-4567</p>
+              <p class="contact-note">General inquiries</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M20 4H4C2.89543 4 2 4.89543 2 6V18C2 19.1046 2.89543 20 4 20H20C21.1046 20 22 19.1046 22 18V6C22 4.89543 21.1046 4 20 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 7L13.03 12.7C12.7213 12.8934 12.3643 12.996 12 12.996C11.6357 12.996 11.2787 12.8934 10.97 12.7L2 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <h4>Email Support</h4>
+              <p class="contact-value">support@canteengo.com</p>
+              <p class="contact-note">Response within 24 hours</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <h4>Live Chat</h4>
+              <p class="contact-value">Available 24/7</p>
+              <p class="contact-note">Instant response</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6982 21.5547 10.4458 21.3031 10.27 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <h4>Emergency Hotline</h4>
+              <p class="contact-value">(555) 911-FOOD</p>
+              <p class="contact-note">24/7 urgent support</p>
+            </div>
+          </div>
+          
+          <div class="departments-grid">
+            <div class="department-item">
+              <h5>Orders & Delivery</h5>
+              <p>ext. 101</p>
+            </div>
+            <div class="department-item">
+              <h5>Restaurant Partners</h5>
+              <p>ext. 102</p>
+            </div>
+            <div class="department-item">
+              <h5>Technical Support</h5>
+              <p>ext. 103</p>
+            </div>
+            <div class="department-item">
+              <h5>Billing & Payments</h5>
+              <p>ext. 104</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact FAQ -->
+      <div class="contact-card faq-card">
+        <div class="card-header">
+          <div class="card-icon faq-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9.09 9C9.3251 8.33167 9.78915 7.76811 10.4 7.40913C11.0108 7.05016 11.7289 6.91894 12.4272 7.03871C13.1255 7.15849 13.7588 7.52152 14.2151 8.06353C14.6713 8.60553 14.9211 9.29152 14.92 10C14.92 12 11.92 13 11.92 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 17H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h2 class="card-title">Contact FAQ</h2>
+        </div>
+        <p class="card-description">Quick answers about contacting support</p>
+        
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How quickly will I get a response?</span>
+              <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Email support typically responds within 24 hours. Live chat provides instant responses during business hours, and our emergency hotline is available 24/7 for urgent matters.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What's the best way to contact support?</span>
+              <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>For quick questions, use our live chat. For detailed inquiries or order issues, email is best. For urgent delivery problems, call our emergency hotline.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I visit your office in person?</span>
+              <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! Our office is located at the Student Center, Building A, 2nd Floor. We welcome walk-ins during business hours (Mon-Fri, 8 AM - 8 PM). Please bring your student ID.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do you offer phone support?</span>
+              <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! Call our main reception at (555) 123-4567. For specific departments, use the extensions listed in Team Contacts above. Emergency hotline is (555) 911-FOOD.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What if I need help outside business hours?</span>
+              <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Our live chat and emergency hotline are available 24/7. You can also send an email anytime, and we'll respond first thing during business hours.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I report a problem with my order?</span>
+              <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Contact Orders & Delivery (ext. 101) immediately or use our emergency hotline for time-sensitive issues. Have your order number ready for faster assistance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="contact-cta">
+    <div class="cta-content">
+      <h2>Still Have Questions?</h2>
+      <p>Our team is ready to help you with anything you need</p>
+      <div class="cta-buttons">
+        <a href="#" class="cta-btn primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Start Live Chat
+        </a>
+        <a href="mailto:support@canteengo.com" class="cta-btn secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Send Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Mobile Menu Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      navToggle.classList.toggle('active');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+      }
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+      });
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const isActive = faqItem.classList.contains('active');
+        
+        // Close all FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          faqItem.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+<!-- ================= MODERN FOOTER ================= -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <h2>🍴 CanteenGo</h2>
+            <p>Your Campus Food Partner. Fast. Fresh. Reliable.</p>
+        </div>
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="11about.html">About Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="17question.html">Help Center</a></li>
+                    <li><a href="17question.html">Contact</a></li>
+                    <li><a href="#">Report Issue</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Account</h4>
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Orders</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 CanteenGo. All Rights Reserved. | Designed by CanteenGo</p>
+    </div>
+</footer>
+
+</body>
+</html>

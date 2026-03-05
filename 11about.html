@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - CanteenGo</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/11about.css">
+  <link rel="stylesheet" href="css/1herosec.css">
+  <link rel="stylesheet" href="css/18footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="navbar-container">
+        <div class="logo" onclick="location.reload()" style="cursor: pointer;">
+            <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="url(#logoGradient)"/>
+                <path d="M16 8C12.6863 8 10 10.6863 10 14C10 17.3137 12.6863 20 16 20C19.3137 20 22 17.3137 22 14C22 10.6863 19.3137 8 16 8Z" fill="white"/>
+                <path d="M16 22C14.8954 22 14 22.8954 14 24C14 25.1046 14.8954 26 16 26C17.1046 26 18 25.1046 18 24C18 22.8954 17.1046 22 16 22Z" fill="white"/>
+                <defs>
+                    <linearGradient id="logoGradient" x1="0" y1="0" x2="32" y2="32">
+                        <stop offset="0%" stop-color="#667eea"/>
+                        <stop offset="50%" stop-color="#764ba2"/>
+                        <stop offset="100%" stop-color="#f093fb"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="logo-text">CanteenGo</span>
+        </div>
+
+        <nav class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+                <li><a href="1herosec.html" class="nav-link">Home</a></li>
+                <li><a href="10menu.html" class="nav-link">Menu</a></li>
+                <li><a href="8restaurants.html" class="nav-link">Restaurants</a></li>
+                <li><a href="11about.html" class="nav-link active">About Us</a></li>
+                <li><a href="6customer.html" class="nav-link">Feedback</a></li>
+                <li><a href="17question.html" class="nav-link">Help Center</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="icon-btn" id="searchBtn" aria-label="Search">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18 18l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <a class="cart-link" href="#" onclick="openCart()">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1h3l2.68 13.39a1 1 0 0 0 1 .61h9.72a1 1 0 0 0 1-.78l1.5-7.5a1 1 0 0 0-1-.72H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8" cy="18" r="1" fill="currentColor"/>
+                    <circle cx="16" cy="18" r="1" fill="currentColor"/>
+                </svg>
+                <span class="cart-badge" id="cart-count">0</span>
+            </a>
+            <button class="btn-order" onclick="openRestaurantSelector()">Order Now</button>
+        </div>
+
+        <button class="hamburger" id="navToggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </div>
+</header>
+
+<!-- ABOUT HERO SECTION -->
+<section class="about-hero">
+  <div class="about-hero-container">
+    <h1 class="about-hero-heading">About CanteenGo</h1>
+    <p class="about-hero-subtitle">Delivering simplicity, speed, and reliability—one meal at a time.</p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number">1M+</span>
+        <span class="stat-label">Happy Customers</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">5,000+</span>
+        <span class="stat-label">Restaurant Partners</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Cities Served</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY SECTION -->
+<section class="our-story-section">
+  <div class="story-container">
+    <div class="story-content">
+      <span class="section-tag">📖 Our Journey</span>
+      <h2 class="section-heading">Our Story</h2>
+      <p class="story-text">
+        CanteenGo was founded in 2020 with a bold vision: to connect hungry people with delicious meals from their favorite local restaurants. What started as a simple idea among three college friends has blossomed into a trusted platform serving millions of customers across thousands of restaurant partners.
+      </p>
+      <p class="story-text">
+        We recognized the challenges students and busy professionals face when trying to grab a quick, quality meal. Long queues, limited options, and inconsistent service were daily frustrations. So we built CanteenGo—a seamless bridge between you and the food you love.
+      </p>
+      <p class="story-text">
+        Today, we're proud to partner with restaurants ranging from local campus favorites to established chains, bringing diverse cuisines right to your doorstep. Every order placed through CanteenGo supports local businesses and helps build stronger food communities.
+      </p>
+    </div>
+    <div class="story-image">
+      <img src="images/Logo.png" alt="CanteenGo Story">
+      <div class="image-badge">
+        <span class="badge-icon">🎉</span>
+        <div class="badge-text">
+          <strong>Founded 2020</strong>
+          <span>4+ Years Strong</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM SECTION -->
+<section class="team-section">
+  <div class="team-container">
+    <span class="section-tag">👥 Leadership</span>
+    <h2 class="section-heading">Meet Our Team</h2>
+    <p class="section-description">The passionate minds behind CanteenGo, dedicated to revolutionizing campus dining.</p>
+    
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="images/divyansh.jpeg" alt="Divyansh Pratap Aitwal">
+          <div class="photo-overlay">
+            <span class="overlay-icon">💼</span>
+          </div>
+        </div>
+        <h3 class="team-name">Divyansh Pratap Aitwal</h3>
+        <p class="team-role">Marketing & Growth Manager</p>
+        <p class="team-bio">Drives customer acquisition strategies and brand partnerships. Former digital marketing lead at FoodHub with 6+ years experience in growth marketing.</p>
+        <div class="team-social">
+          <a href="#" class="social-icon">💼</a>
+          <a href="#" class="social-icon">🔗</a>
+          <a href="#" class="social-icon">📧</a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="images/diwas.jpeg" alt="Diwas Joshi">
+          <div class="photo-overlay">
+            <span class="overlay-icon">🎨</span>
+          </div>
+        </div>
+        <h3 class="team-name">Diwas Joshi</h3>
+        <p class="team-role">Product Manager</p>
+        <p class="team-bio">Leads product strategy and user experience design. Previously built mobile apps at TechCorp, passionate about creating intuitive food-tech solutions.</p>
+        <div class="team-social">
+          <a href="#" class="social-icon">💼</a>
+          <a href="#" class="social-icon">🔗</a>
+          <a href="#" class="social-icon">📧</a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="images/Himanshu.jpeg" alt="Himanshu Bohara">
+          <div class="photo-overlay">
+            <span class="overlay-icon">🚚</span>
+          </div>
+        </div>
+        <h3 class="team-name">Himanshu Bohara</h3>
+        <p class="team-role">Operational Manager & Delivery Lead</p>
+        <p class="team-bio">Manages logistics, delivery operations, and restaurant partnerships. Expert in supply chain optimization with background in operations at LogisticsPro.</p>
+        <div class="team-social">
+          <a href="#" class="social-icon">💼</a>
+          <a href="#" class="social-icon">🔗</a>
+          <a href="#" class="social-icon">📧</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR HISTORY SECTION -->
+<section class="history-section">
+  <div class="history-container">
+    <span class="section-tag">📅 Milestones</span>
+    <h2 class="section-heading">Our History</h2>
+    <p class="section-description">From a college dorm idea to serving millions—here's how we grew.</p>
+    
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2020</span>
+          <h3>🚀 The Beginning</h3>
+          <p>Founded by three college friends frustrated with campus dining options. Launched beta version serving 5 campus restaurants.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2021</span>
+          <h3>📈 Rapid Growth</h3>
+          <p>Expanded to 10 campuses, partnered with 200+ restaurants. Achieved 50,000+ happy customers and raised seed funding.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2022</span>
+          <h3>🏆 Major Milestone</h3>
+          <p>Crossed 1 million orders delivered. Launched mobile app for iOS and Android. Introduced subscription plans for students.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2023</span>
+          <h3>🌍 National Expansion</h3>
+          <p>Expanded to 50+ cities nationwide. Partnered with 5,000+ restaurants. Introduced real-time tracking and AI-powered recommendations.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2024</span>
+          <h3>💡 Innovation Era</h3>
+          <p>Launched smart canteen kiosks, contactless pickup, and eco-friendly packaging initiative. Won "Best Food-Tech Startup" award.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2025-26</span>
+          <h3>🎯 Future Ready</h3>
+          <p>Serving 1M+ customers monthly. Building AI chatbot for instant support, exploring drone delivery, and expanding to international markets.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR VALUES SECTION -->
+<section class="values-section">
+  <div class="values-container">
+    <span class="section-tag">💎 What We Believe</span>
+    <h2 class="section-heading">Our Values</h2>
+    <p class="section-description">The core principles that guide everything we do at CanteenGo.</p>
+    
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h3>Speed & Efficiency</h3>
+        <p>We know you're hungry. That's why we optimize every step—from order placement to delivery—ensuring you get your meal fast without compromising quality.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">🎯</div>
+        <h3>Quality First</h3>
+        <p>We partner only with restaurants that meet our strict quality standards. Every meal delivered represents our commitment to excellence and customer satisfaction.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>Community Focus</h3>
+        <p>We're more than a delivery service—we're building food communities. Supporting local restaurants, creating jobs, and bringing people together over great meals.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">💚</div>
+        <h3>Sustainability</h3>
+        <p>Environmental responsibility matters. We use eco-friendly packaging, optimize delivery routes to reduce emissions, and partner with green restaurants.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">🔒</div>
+        <h3>Trust & Safety</h3>
+        <p>Your safety is paramount. We verify all restaurant partners, ensure food hygiene standards, and provide secure payment options with transparent pricing.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">🌟</div>
+        <h3>Customer Delight</h3>
+        <p>Your happiness drives us. From 24/7 support to personalized recommendations, we go the extra mile to ensure every CanteenGo experience exceeds expectations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREERS SECTION -->
+<section class="careers-section">
+  <div class="careers-container">
+    <span class="section-tag">💼 Join Us</span>
+    <h2 class="section-heading">Careers at CanteenGo</h2>
+    <p class="section-description">Join our team of passionate food-tech enthusiasts and help shape the future of campus dining.</p>
+    
+    <div class="careers-intro">
+      <p>At CanteenGo, we're building more than a food delivery platform—we're creating the future of how people discover, order, and enjoy meals. If you're passionate about technology, food, and making a real impact, we'd love to hear from you.</p>
+    </div>
+
+    <div class="openings-grid">
+      <div class="opening-card">
+        <div class="opening-header">
+          <h3>Senior Software Engineer</h3>
+          <span class="opening-badge">Full-Time</span>
+        </div>
+        <div class="opening-details">
+          <span class="detail-item">📍 Remote / Hybrid</span>
+          <span class="detail-item">💰 $80k - $120k</span>
+          <span class="detail-item">⏰ Posted 2 days ago</span>
+        </div>
+        <p class="opening-description">Build scalable backend systems, optimize database performance, and architect microservices. 5+ years experience with Node.js, Python, or Go required.</p>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+
+      <div class="opening-card">
+        <div class="opening-header">
+          <h3>Product Designer (UI/UX)</h3>
+          <span class="opening-badge">Full-Time</span>
+        </div>
+        <div class="opening-details">
+          <span class="detail-item">📍 Office-Based</span>
+          <span class="detail-item">💰 $60k - $90k</span>
+          <span class="detail-item">⏰ Posted 5 days ago</span>
+        </div>
+        <p class="opening-description">Design intuitive user interfaces and conduct user research. Portfolio showcasing mobile app design required. Experience with Figma, Sketch, or Adobe XD essential.</p>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+
+      <div class="opening-card">
+        <div class="opening-header">
+          <h3>Marketing Intern</h3>
+          <span class="opening-badge opening-badge-intern">Internship</span>
+        </div>
+        <div class="opening-details">
+          <span class="detail-item">📍 Remote</span>
+          <span class="detail-item">💰 $15 - $20/hr</span>
+          <span class="detail-item">⏰ Posted 1 week ago</span>
+        </div>
+        <p class="opening-description">Assist with social media campaigns, content creation, and market research. Great opportunity for students passionate about digital marketing and food tech.</p>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+
+      <div class="opening-card">
+        <div class="opening-header">
+          <h3>Delivery Operations Manager</h3>
+          <span class="opening-badge">Full-Time</span>
+        </div>
+        <div class="opening-details">
+          <span class="detail-item">📍 On-Site</span>
+          <span class="detail-item">💰 $50k - $70k</span>
+          <span class="detail-item">⏰ Posted 3 days ago</span>
+        </div>
+        <p class="opening-description">Oversee delivery fleet, optimize routes, and ensure timely order fulfillment. Experience in logistics or supply chain management preferred.</p>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+
+      <div class="opening-card">
+        <div class="opening-header">
+          <h3>Customer Support Specialist</h3>
+          <span class="opening-badge">Part-Time</span>
+        </div>
+        <div class="opening-details">
+          <span class="detail-item">📍 Remote</span>
+          <span class="detail-item">💰 $18 - $25/hr</span>
+          <span class="detail-item">⏰ Posted 4 days ago</span>
+        </div>
+        <p class="opening-description">Provide exceptional customer service via chat, email, and phone. Flexible hours available. Perfect for students seeking part-time work.</p>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+
+      <div class="opening-card">
+        <div class="opening-header">
+          <h3>Data Analyst</h3>
+          <span class="opening-badge">Full-Time</span>
+        </div>
+        <div class="opening-details">
+          <span class="detail-item">📍 Hybrid</span>
+          <span class="detail-item">💰 $70k - $95k</span>
+          <span class="detail-item">⏰ Posted 6 days ago</span>
+        </div>
+        <p class="opening-description">Analyze user behavior, generate insights, and build predictive models. Proficiency in SQL, Python, and data visualization tools (Tableau, Power BI) required.</p>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+    </div>
+
+    <div class="careers-cta">
+      <h3>Don't see the right role?</h3>
+      <p>Send us your resume anyway! We're always looking for talented individuals to join our team.</p>
+      <button class="cta-button">Send General Application</button>
+    </div>
+  </div>
+</section>
+
+<script>
+// Mobile Menu Toggle
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+const body = document.body;
+
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        body.classList.toggle('menu-open');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            body.classList.remove('menu-open');
+        });
+    });
+}
+
+// ================= SEARCH FUNCTIONALITY =================
+// Complete searchable items database
+const searchableItems = [
+    // Popular Dishes
+    {name: 'Cheese Burger', price: 180, category: 'Burger', page: 'Home', type: 'dish'},
+    {name: 'Margherita Pizza', price: 550, category: 'Pizza', page: 'Home', type: 'dish'},
+    {name: 'Chicken Momo', price: 150, category: 'Momo', page: 'Home', type: 'dish'},
+    {name: 'Grilled Sandwich', price: 120, category: 'Sandwich', page: 'Home', type: 'dish'},
+    {name: 'Veg Chowmein', price: 140, category: 'Noodles', page: 'Home', type: 'dish'},
+    {name: 'French Fries', price: 100, category: 'Sides', page: 'Home', type: 'dish'},
+    
+    // Combos
+    {name: 'Combo 1 - Main + Side + Beverage', price: 2999, category: 'Combo', page: 'Menu', type: 'combo'},
+    {name: 'Combo 2 - Family Pack', price: 3999, category: 'Combo', page: 'Menu', type: 'combo'},
+    {name: 'Combo 3 - Student Special', price: 4999, category: 'Combo', page: 'Menu', type: 'combo'},
+    
+    // Chef Picks
+    {name: 'Creamy Alfredo Pasta', price: 349, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Grilled Chicken Breast', price: 399, category: 'Healthy', page: 'Menu', type: 'dish'},
+    {name: 'Tandoori Paneer Tikka', price: 299, category: 'Indian', page: 'Menu', type: 'dish'},
+    {name: 'Chocolate Lava Cake', price: 499, category: 'Dessert', page: 'Menu', type: 'dish'},
+    
+    // Italian
+    {name: 'Margherita Pizza', price: 550, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Pepperoni Pizza', price: 650, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Vegetarian Pizza', price: 600, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Carbonara Pasta', price: 450, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Creamy Alfredo Pasta', price: 349, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Bolognese Pasta', price: 480, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Penne Arrabbiata', price: 420, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Lasagna', price: 520, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Garlic Bread', price: 150, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Bruschetta', price: 180, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Tiramisu', price: 250, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Panna Cotta', price: 220, category: 'Italian', page: 'Menu', type: 'dish'},
+    
+    // Asian
+    {name: 'Chicken Fried Rice', price: 280, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Veg Fried Rice', price: 240, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Hakka Noodles', price: 260, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Chowmein', price: 250, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Spring Rolls', price: 180, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Momo', price: 150, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Veg Momo', price: 130, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Buff Momo', price: 160, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Fried Momo', price: 170, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Jhol Momo', price: 180, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Thukpa', price: 220, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Veg Thukpa', price: 200, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Chilli Chicken', price: 320, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Manchurian', price: 280, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Sweet & Sour Chicken', price: 340, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Pad Thai', price: 380, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Tom Yum Soup', price: 250, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Sushi Platter', price: 650, category: 'Asian', page: 'Menu', type: 'dish'},
+    
+    // Fast Food
+    {name: 'Classic Burger', price: 180, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Cheese Burger', price: 220, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Burger', price: 250, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Veg Burger', price: 160, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Double Patty Burger', price: 320, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'French Fries', price: 100, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Loaded Fries', price: 180, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Wings', price: 280, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Nuggets', price: 220, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Hot Dog', price: 150, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Grilled Sandwich', price: 120, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Club Sandwich', price: 200, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Wrap', price: 180, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Veg Wrap', price: 150, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Onion Rings', price: 120, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    
+    // Restaurants
+    {name: 'Samaya Rooftop Garden', cuisine: 'Nepali', rating: '4.9', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Walnut Bistro', cuisine: 'Indian', rating: '4.8', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Nepalaya Rooftop', cuisine: 'Chinese', rating: '4.7', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Sicily By Ts', cuisine: 'Italian', rating: '4.6', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Fresh Bowl Kitchen', cuisine: 'Healthy', rating: '4.8', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Burger Junction', cuisine: 'Fast Food', rating: '4.5', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Sweet Paradise', cuisine: 'Desserts', rating: '4.9', page: 'Restaurants', type: 'restaurant'}
+];
+
+// Open search modal
+function openSearch() {
+    document.getElementById('searchModal').style.display = 'flex';
+    setTimeout(() => {
+        document.getElementById('searchInput').focus();
+    }, 100);
+}
+
+// Close search modal
+function closeSearch() {
+    document.getElementById('searchModal').style.display = 'none';
+    document.getElementById('searchInput').value = '';
+    document.getElementById('searchResults').innerHTML = '<p style="text-align: center; color: #666;">Start typing to search...</p>';
+}
+
+// Perform search
+function performSearch() {
+    const query = document.getElementById('searchInput').value.toLowerCase().trim();
+    const resultsContainer = document.getElementById('searchResults');
+    
+    if (query === '') {
+        resultsContainer.innerHTML = '<p style="text-align: center; color: #666;">Start typing to search...</p>';
+        return;
+    }
+    
+    // Filter items based on search query
+    const results = searchableItems.filter(item => 
+        item.name.toLowerCase().includes(query) || 
+        (item.category && item.category.toLowerCase().includes(query)) ||
+        (item.cuisine && item.cuisine.toLowerCase().includes(query))
+    );
+    
+    if (results.length === 0) {
+        resultsContainer.innerHTML = '<p style="text-align: center; color: #666;">No results found for "' + query + '"</p>';
+        return;
+    }
+    
+    // Display results
+    let html = '<div style="display: grid; gap: 15px;">';
+    
+    results.forEach(item => {
+        if (item.type === 'restaurant') {
+            html += `
+                <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; display: flex; justify-content: space-between; align-items: center; background: #f9f9f9;">
+                    <div>
+                        <h3 style="margin: 0 0 5px 0; font-size: 16px;">${item.name}</h3>
+                        <p style="margin: 0; color: #666; font-size: 14px;">${item.cuisine} • ⭐ ${item.rating} • ${item.page}</p>
+                    </div>
+                    <button onclick='window.location.href="8restaurants.html"' style="padding: 8px 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; cursor: pointer;">View</button>
+                </div>
+            `;
+        } else {
+            html += `
+                <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h3 style="margin: 0 0 5px 0; font-size: 16px;">${item.name}</h3>
+                        <p style="margin: 0; color: #666; font-size: 14px;">${item.category} • Rs. ${item.price} • ${item.page}</p>
+                    </div>
+                    <button onclick='showAddedToast()' style="padding: 8px 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; cursor: pointer;">Add to Cart</button>
+                </div>
+            `;
+        }
+    });
+    
+    html += '</div>';
+    resultsContainer.innerHTML = html;
+}
+
+// Show toast notification when item added
+function showAddedToast() {
+    const toast = document.createElement('div');
+    toast.innerText = '✓ Added to cart!';
+    toast.style.cssText = 'position: fixed; bottom: 30px; right: 30px; background: #10b981; color: white; padding: 15px 25px; border-radius: 8px; font-weight: 600; z-index: 10000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);';
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.remove();
+    }, 2000);
+}
+
+// Close when clicking outside any modal
+window.onclick = function(e) {
+    ['searchModal', 'restaurantSelectorModal', 'restaurantMenuModal', 'loginModal'].forEach(id => {
+        const m = document.getElementById(id);
+        if (m && e.target === m) m.style.display = 'none';
+    });
+}
+
+// ================= RESTAURANT SELECTOR & MENU =================
+// Open restaurant selector modal
+function openRestaurantSelector() {
+    document.getElementById('restaurantSelectorModal').style.display = 'flex';
+}
+
+// Close restaurant selector modal
+function closeRestaurantSelector() {
+    document.getElementById('restaurantSelectorModal').style.display = 'none';
+}
+
+// Restaurant menu data
+const restaurantMenus = {
+    'Nepali': [
+        {name: 'Dal Bhat Set', price: 250, category: 'Main Course'},
+        {name: 'Chicken Momo (10 pcs)', price: 150, category: 'Appetizer'},
+        {name: 'Veg Momo (10 pcs)', price: 130, category: 'Appetizer'},
+        {name: 'Thakali Thali', price: 350, category: 'Main Course'},
+        {name: 'Newari Khaja Set', price: 400, category: 'Specialty'},
+        {name: 'Chatamari', price: 120, category: 'Snacks'},
+        {name: 'Sel Roti (5 pcs)', price: 100, category: 'Snacks'},
+        {name: 'Yomari (3 pcs)', price: 150, category: 'Dessert'},
+        {name: 'Gundruk Soup', price: 100, category: 'Soup'},
+        {name: 'Aloo Tama', price: 180, category: 'Side Dish'}
+    ],
+    'Indian': [
+        {name: 'Butter Chicken', price: 380, category: 'Main Course'},
+        {name: 'Chicken Biryani', price: 320, category: 'Rice'},
+        {name: 'Paneer Tikka Masala', price: 280, category: 'Main Course'},
+        {name: 'Garlic Naan', price: 50, category: 'Bread'},
+        {name: 'Tandoori Chicken', price: 350, category: 'Tandoori'},
+        {name: 'Palak Paneer', price: 250, category: 'Vegetarian'},
+        {name: 'Chicken Tikka', price: 320, category: 'Tandoori'},
+        {name: 'Masala Dosa', price: 180, category: 'South Indian'},
+        {name: 'Samosa (2 pcs)', price: 60, category: 'Snacks'},
+        {name: 'Gulab Jamun', price: 100, category: 'Dessert'}
+    ],
+    'Chinese': [
+        {name: 'Chicken Fried Rice', price: 280, category: 'Rice'},
+        {name: 'Veg Chowmein', price: 220, category: 'Noodles'},
+        {name: 'Chicken Chowmein', price: 250, category: 'Noodles'},
+        {name: 'Spring Rolls (6 pcs)', price: 180, category: 'Appetizer'},
+        {name: 'Sweet & Sour Chicken', price: 340, category: 'Main Course'},
+        {name: 'Manchurian', price: 280, category: 'Main Course'},
+        {name: 'Hakka Noodles', price: 260, category: 'Noodles'},
+        {name: 'Fried Momo (10 pcs)', price: 170, category: 'Appetizer'},
+        {name: 'Hot & Sour Soup', price: 150, category: 'Soup'},
+        {name: 'Kung Pao Chicken', price: 360, category: 'Main Course'}
+    ],
+    'Italian': [
+        {name: 'Margherita Pizza', price: 550, category: 'Pizza'},
+        {name: 'Pepperoni Pizza', price: 650, category: 'Pizza'},
+        {name: 'Carbonara Pasta', price: 450, category: 'Pasta'},
+        {name: 'Alfredo Pasta', price: 420, category: 'Pasta'},
+        {name: 'Lasagna', price: 520, category: 'Baked'},
+        {name: 'Garlic Bread', price: 150, category: 'Sides'},
+        {name: 'Bruschetta', price: 180, category: 'Appetizer'},
+        {name: 'Ravioli', price: 480, category: 'Pasta'},
+        {name: 'Tiramisu', price: 250, category: 'Dessert'},
+        {name: 'Panna Cotta', price: 220, category: 'Dessert'}
+    ],
+    'Healthy': [
+        {name: 'Green Goddess Bowl', price: 380, category: 'Bowls'},
+        {name: 'Mediterranean Bowl', price: 389, category: 'Bowls'},
+        {name: 'Quinoa Power Bowl', price: 420, category: 'Bowls'},
+        {name: 'Greek Salad', price: 280, category: 'Salads'},
+        {name: 'Caesar Salad', price: 260, category: 'Salads'},
+        {name: 'Avocado Toast', price: 250, category: 'Toast'},
+        {name: 'Smoothie Bowl', price: 320, category: 'Bowls'},
+        {name: 'Fruit Salad', price: 200, category: 'Salads'},
+        {name: 'Green Smoothie', price: 180, category: 'Drinks'},
+        {name: 'Protein Bowl', price: 450, category: 'Bowls'}
+    ],
+    'Fast Food': [
+        {name: 'Classic Burger', price: 180, category: 'Burgers'},
+        {name: 'Cheese Burger', price: 220, category: 'Burgers'},
+        {name: 'Chicken Burger', price: 250, category: 'Burgers'},
+        {name: 'French Fries', price: 100, category: 'Sides'},
+        {name: 'Loaded Fries', price: 180, category: 'Sides'},
+        {name: 'Chicken Wings (8 pcs)', price: 280, category: 'Snacks'},
+        {name: 'Chicken Nuggets (10 pcs)', price: 220, category: 'Snacks'},
+        {name: 'Hot Dog', price: 150, category: 'Snacks'},
+        {name: 'Onion Rings', price: 120, category: 'Sides'},
+        {name: 'Milkshake', price: 180, category: 'Drinks'}
+    ],
+    'Desserts': [
+        {name: 'Red Velvet Cake', price: 200, category: 'Cakes'},
+        {name: 'Chocolate Cake', price: 180, category: 'Cakes'},
+        {name: 'Cheesecake', price: 250, category: 'Cakes'},
+        {name: 'Vanilla Ice Cream', price: 120, category: 'Ice Cream'},
+        {name: 'Chocolate Ice Cream', price: 120, category: 'Ice Cream'},
+        {name: 'Brownie Sundae', price: 220, category: 'Special'},
+        {name: 'Tiramisu', price: 250, category: 'Italian'},
+        {name: 'Donut (3 pcs)', price: 150, category: 'Pastries'},
+        {name: 'Chocolate Mousse', price: 180, category: 'Special'},
+        {name: 'Apple Pie', price: 200, category: 'Pies'},
+        {name: 'Cupcake (2 pcs)', price: 140, category: 'Cakes'},
+        {name: 'Waffle with Ice Cream', price: 280, category: 'Special'}
+    ]
+};
+
+// Open restaurant menu modal
+function openRestaurantMenuModal(restaurantName, cuisine) {
+    // Close selector modal
+    closeRestaurantSelector();
+    
+    // Set restaurant info
+    document.getElementById('restaurant-name').innerText = restaurantName;
+    document.getElementById('restaurant-cuisine').innerText = cuisine + ' Cuisine';
+    
+    // Get menu items for this cuisine
+    const menuItems = restaurantMenus[cuisine] || [];
+    
+    // Group items by category
+    const categories = {};
+    menuItems.forEach(item => {
+        if (!categories[item.category]) {
+            categories[item.category] = [];
+        }
+        categories[item.category].push(item);
+    });
+    
+    // Build menu HTML
+    let menuHTML = '';
+    for (const [category, items] of Object.entries(categories)) {
+        menuHTML += `
+            <div style="margin-bottom: 30px;">
+                <h3 style="padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #667eea; margin-bottom: 15px;">${category}</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px;">
+        `;
+        
+        items.forEach(item => {
+            menuHTML += `
+                <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fff; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
+                    <h4 style="margin: 0 0 8px 0; font-size: 16px; color: #333;">${item.name}</h4>
+                    <p style="margin: 0 0 12px 0; font-size: 18px; font-weight: bold; color: #667eea;">Rs. ${item.price}</p>
+                    <button onclick="addToCart('${item.name}', ${item.price}); showAddedToast()" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Add to Cart</button>
+                </div>
+            `;
+        });
+        
+        menuHTML += `</div></div>`;
+    }
+    
+    document.getElementById('restaurant-menu-items').innerHTML = menuHTML;
+    document.getElementById('restaurantMenuModal').style.display = 'flex';
+}
+
+// Close restaurant menu modal
+function closeRestaurantMenuModal() {
+    document.getElementById('restaurantMenuModal').style.display = 'none';
+}
+
+// ================= LOGIN MODAL =================
+function openLoginModal() {
+    document.getElementById('loginModal').style.display = 'flex';
+}
+
+function closeLoginModal() {
+    document.getElementById('loginModal').style.display = 'none';
+    document.getElementById('login-username').value = '';
+    document.getElementById('login-password').value = '';
+}
+
+function handleLogin(e) {
+    e.preventDefault();
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+    
+    if (username && password) {
+        alert('Login successful! Welcome to CanteenGo, ' + username + '!');
+        closeLoginModal();
+    } else {
+        alert('Please enter both username and password.');
+    }
+    return false;
+}
+
+// Connect search button
+document.addEventListener('DOMContentLoaded', function() {
+    const searchBtn = document.getElementById('searchBtn');
+    if (searchBtn) {
+        searchBtn.addEventListener('click', openSearch);
+    }
+});
+</script>
+
+<!-- ================= LOGIN MODAL ================= -->
+<div id="loginModal" class="modal">
+    <div class="modal-content" style="max-width: 450px;">
+        <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+        <h2 style="text-align: center; margin-bottom: 20px;">Login to CanteenGo</h2>
+        
+        <form onsubmit="return handleLogin(event)" style="display: flex; flex-direction: column; gap: 15px;">
+            <div>
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Email or Username</label>
+                <input type="text" id="login-username" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
+            </div>
+            
+            <div>
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Password</label>
+                <input type="password" id="login-password" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                    <input type="checkbox" style="cursor: pointer;">
+                    <span style="font-size: 14px;">Remember me</span>
+                </label>
+                <a href="#" onclick="alert('Please contact support at pratapaitwaldivyansh@gmail.com to reset your password.'); return false;" style="font-size: 14px; color: #667eea; text-decoration: none;">Forgot Password?</a>
+            </div>
+            
+            <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; margin-top: 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 16px;">Login</button>
+            
+            <p style="text-align: center; margin-top: 15px; font-size: 14px; color: #666;">
+                Don't have an account? 
+                <a href="#" onclick="alert('Registration feature coming soon!'); return false;" style="color: #667eea; text-decoration: none; font-weight: 600;">Sign Up</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+<!-- ================= RESTAURANT SELECTOR MODAL ================= -->
+<div id="restaurantSelectorModal" class="modal">
+    <div class="modal-content" style="max-width: 900px;">
+        <span class="close-btn" onclick="closeRestaurantSelector()">&times;</span>
+        <h2 style="text-align: center; margin-bottom: 10px;">Choose Your Restaurant</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 25px;">Select a restaurant to view their menu and start ordering</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <!-- Restaurant Cards -->
+            <div onclick="openRestaurantMenuModal('Samaya Rooftop Garden', 'Nepali')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🏔️</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Samaya Rooftop Garden</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Nepali Cuisine • ⭐ 4.9</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Dal Bhat, Momo, Thakali Thali</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Walnut Bistro', 'Indian')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍛</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Walnut Bistro</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Indian Cuisine • ⭐ 4.8</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Butter Chicken, Biryani, Naan</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Nepalaya Rooftop', 'Chinese')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🥡</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Nepalaya Rooftop</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Chinese Cuisine • ⭐ 4.7</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Chowmein, Fried Rice, Dumplings</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Sicily By Ts', 'Italian')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍕</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Sicily By Ts</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Italian Cuisine • ⭐ 4.6</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Pizza, Pasta, Risotto</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Fresh Bowl Kitchen', 'Healthy')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🥗</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Fresh Bowl Kitchen</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Healthy Cuisine • ⭐ 4.8</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Salads, Smoothie Bowls, Wraps</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Burger Junction', 'Fast Food')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍔</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Burger Junction</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Fast Food • ⭐ 4.5</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Burgers, Fries, Wings</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Sweet Paradise', 'Desserts')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍰</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Sweet Paradise</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Desserts • ⭐ 4.9</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Cakes, Ice Cream, Pastries</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= RESTAURANT MENU MODAL ================= -->
+<div id="restaurantMenuModal" class="modal">
+    <div class="modal-content" style="max-width: 1000px; max-height: 90vh; overflow-y: auto;">
+        <span class="close-btn" onclick="closeRestaurantMenuModal()">&times;</span>
+        <h2 id="restaurant-name" style="text-align: center; margin-bottom: 5px;"></h2>
+        <p id="restaurant-cuisine" style="text-align: center; color: #666; margin-bottom: 25px;"></p>
+        
+        <div id="restaurant-menu-items">
+            <!-- Menu items will be populated here -->
+        </div>
+    </div>
+</div>
+
+<!-- ================= SEARCH MODAL ================= -->
+<div id="searchModal" class="modal">
+    <div class="modal-content" style="max-width: 700px;">
+        <span class="close-btn" onclick="closeSearch()">&times;</span>
+        <h2>Search Menu</h2>
+        
+        <input type="text" id="searchInput" placeholder="Search for dishes, restaurants, combos..." 
+               style="width: 100%; padding: 12px; margin: 15px 0; font-size: 16px; border: 2px solid #ddd; border-radius: 8px;" 
+               oninput="performSearch()" autofocus>
+        
+        <div id="searchResults" style="max-height: 400px; overflow-y: auto; margin-top: 20px;">
+            <p style="text-align: center; color: #666;">Start typing to search...</p>
+        </div>
+    </div>
+</div>
+
+<!-- ================= MODERN FOOTER ================= -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-brand" onclick="location.reload()" style="cursor: pointer;">
+            <h2>🍴 CanteenGo</h2>
+            <p>Your Campus Food Partner. Fast. Fresh. Reliable.</p>
+        </div>
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="11about.html">About Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#" onclick="alert('Join our team! Send your resume to careers@canteengo.com'); return false;">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="17question.html">Help Center</a></li>
+                    <li><a href="#contact" onclick="document.querySelector('.contact-section')?.scrollIntoView({behavior: 'smooth'}); return false;">Contact</a></li>
+                    <li><a href="16message.html">Report Issue</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Account</h4>
+                <ul>
+                    <li><a href="#" onclick="openLoginModal(); return false;">Login</a></li>
+                    <li><a href="#" onclick="alert('Profile feature coming soon! Currently in development.'); return false;">Profile</a></li>
+                    <li><a href="#" onclick="openCart(); return false;">Orders</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 CanteenGo. All Rights Reserved. | Designed by CanteenGo</p>
+    </div>
+</footer>
+
+<script src="1herosec.js"></script>
+
+</body>
+</html>

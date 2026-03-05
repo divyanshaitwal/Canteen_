@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu - CanteenGo</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/10menu.css" />
+  <link rel="stylesheet" href="css/1herosec.css">
+  <link rel="stylesheet" href="css/18footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="navbar-container">
+        <div class="logo" onclick="location.reload()" style="cursor: pointer;">
+            <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="url(#logoGradient)"/>
+                <path d="M16 8C12.6863 8 10 10.6863 10 14C10 17.3137 12.6863 20 16 20C19.3137 20 22 17.3137 22 14C22 10.6863 19.3137 8 16 8Z" fill="white"/>
+                <path d="M16 22C14.8954 22 14 22.8954 14 24C14 25.1046 14.8954 26 16 26C17.1046 26 18 25.1046 18 24C18 22.8954 17.1046 22 16 22Z" fill="white"/>
+                <defs>
+                    <linearGradient id="logoGradient" x1="0" y1="0" x2="32" y2="32">
+                        <stop offset="0%" stop-color="#667eea"/>
+                        <stop offset="50%" stop-color="#764ba2"/>
+                        <stop offset="100%" stop-color="#f093fb"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="logo-text">CanteenGo</span>
+        </div>
+
+        <nav class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+                <li><a href="1herosec.html" class="nav-link">Home</a></li>
+                <li><a href="10menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="8restaurants.html" class="nav-link">Restaurants</a></li>
+                <li><a href="11about.html" class="nav-link">About Us</a></li>
+                <li><a href="6customer.html" class="nav-link">Feedback</a></li>
+                <li><a href="17question.html" class="nav-link">Help Center</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="icon-btn" id="searchBtn" aria-label="Search">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18 18l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <a class="cart-link" href="#" onclick="openCart()">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1h3l2.68 13.39a1 1 0 0 0 1 .61h9.72a1 1 0 0 0 1-.78l1.5-7.5a1 1 0 0 0-1-.72H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8" cy="18" r="1" fill="currentColor"/>
+                    <circle cx="16" cy="18" r="1" fill="currentColor"/>
+                </svg>
+                <span class="cart-badge" id="cart-count">0</span>
+            </a>
+            <button class="btn-order" onclick="openRestaurantSelector()">Order Now</button>
+        </div>
+
+        <button class="hamburger" id="navToggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </div>
+</header>
+  <section class="menu-section">
+    <!-- Dietary Options -->
+    <div class="dietary-options">
+      <h2>Dietary Options</h2>
+      <div class="options-grid">
+        <div class="option-box" onclick="openDietaryModal('Vegetarian')">Vegetarian</div>
+        <div class="option-box" onclick="openDietaryModal('Vegan')">Vegan</div>
+        <div class="option-box" onclick="openDietaryModal('Gluten-Free')">Gluten-Free</div>
+        <div class="option-box" onclick="openDietaryModal('Keto')">Keto</div>
+        <div class="option-box" onclick="openDietaryModal('Halal')">Halal</div>
+      </div>
+    </div>
+
+    <!-- Popular Combos -->
+    <div class="popular-combos">
+      <h2>Popular Combos</h2>
+      <div class="combo-grid">
+        <div class="combo-card">
+          <div class="combo-image">
+            <img src="images/mocktail.jpg" alt="Combo 1" />
+          </div>
+          <h3>Combo 1</h3>
+          <p>Main Dish + Side Dish + Beverage</p>
+          <p class="price">Rs. 2999</p>
+          <button onclick="addToCart('Combo 1 - Main + Side + Beverage', 2999)">Add to Cart</button>
+        </div>
+        <div class="combo-card">
+          <div class="combo-image">
+            <img src="images/juice.jpeg" alt="Combo 2" />
+          </div>
+          <h3>Combo 2</h3>
+          <p>Main Dish + Side Dish + Beverage</p>
+          <p class="price">Rs. 3999</p>
+          <button onclick="addToCart('Combo 2 - Main + Side + Beverage', 3999)">Add to Cart</button>
+        </div>
+        <div class="combo-card">
+          <div class="combo-image">
+            <img src="images/beer.webp" alt="Combo 3" />
+          </div>
+          <h3>Combo 3</h3>
+          <p>Main Dish + Side Dish + Beverage</p>
+          <p class="price">Rs. 4999</p>
+          <button onclick="addToCart('Combo 3 - Main + Side + Beverage', 4999)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Categories -->
+  <section class="menu-categories">
+    <h2>Categories</h2>
+    <p>Explore cuisines and categories.</p>
+    <div class="categories-grid">
+        <div class="category-card" onclick="openCategoryModal('Italian')">
+            <div class="category-icon">🍕</div>
+            <h3>Italian</h3>
+            <p>Pasta, Pizza & More</p>
+            <span class="item-count">12 Items</span>
+        </div>
+        <div class="category-card" onclick="openCategoryModal('Asian')">
+            <div class="category-icon">🍜</div>
+            <h3>Asian</h3>
+            <p>Noodles, Rice & Curries</p>
+            <span class="item-count">18 Items</span>
+        </div>
+        <div class="category-card" onclick="openCategoryModal('Fast Food')">
+            <div class="category-icon">🍔</div>
+            <h3>Fast Food</h3>
+            <p>Burgers, Fries & Snacks</p>
+            <span class="item-count">15 Items</span>
+        </div>
+        <div class="category-card" onclick="openCategoryModal('Healthy')">
+            <div class="category-icon">🥗</div>
+            <h3>Healthy</h3>
+            <p>Salads & Fresh Bowls</p>
+            <span class="item-count">10 Items</span>
+        </div>
+        <div class="category-card" onclick="openCategoryModal('Desserts')">
+            <div class="category-icon">🍰</div>
+            <h3>Desserts</h3>
+            <p>Cakes, Ice Cream & Sweets</p>
+            <span class="item-count">8 Items</span>
+        </div>
+        <div class="category-card" onclick="openCategoryModal('Beverages')">
+            <div class="category-icon">☕</div>
+            <h3>Beverages</h3>
+            <p>Coffee, Tea & Smoothies</p>
+            <span class="item-count">14 Items</span>
+        </div>
+    </div>
+  </section>
+
+  <!-- Chef Picks -->
+  <section class="chef-picks">
+    <h2>Chef Picks</h2>
+    <p>Curated dishes recommended by our chefs.</p>
+    <div class="chef-picks-grid">
+        <div class="chef-pick-card">
+            <div class="pick-badge">Chef's Choice</div>
+            <div class="pick-image">🍝</div>
+            <h3>Creamy Alfredo Pasta</h3>
+            <p>Rich creamy sauce with perfectly cooked fettuccine, topped with parmesan.</p>
+            <div class="pick-footer">
+                <span class="pick-price">Rs. 349</span>
+                <button class="btn-add-cart" onclick="addToCart('Creamy Alfredo Pasta', 349)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="chef-pick-card">
+            <div class="pick-badge">Most Popular</div>
+            <div class="pick-image">🍛</div>
+            <h3>Butter Chicken & Rice</h3>
+            <p>Tender chicken in rich tomato-butter gravy served with basmati rice.</p>
+            <div class="pick-footer">
+                <span class="pick-price">Rs. 429</span>
+                <button class="btn-add-cart" onclick="addToCart('Butter Chicken & Rice', 429)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="chef-pick-card">
+            <div class="pick-badge">Trending</div>
+            <div class="pick-image">🍕</div>
+            <h3>Signature Pizza</h3>
+            <p>Wood-fired pizza with premium toppings and authentic Italian cheese.</p>
+            <div class="pick-footer">
+                <span class="pick-price">Rs. 499</span>
+                <button class="btn-add-cart" onclick="addToCart('Signature Pizza', 499)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews -->
+  <section class="menu-testimonials">
+    <h2>Customer Reviews</h2>
+    <p>What people say about our menu.</p>
+    <div class="reviews-grid">
+        <div class="review-card">
+            <div class="review-rating">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"The Butter Chicken is absolutely delicious! Authentic taste and perfect portion size. Highly recommend!"</p>
+            <h4 class="review-author">- Rabin Shrestha</h4>
+            <span class="review-dish">Butter Chicken & Rice</span>
+        </div>
+        <div class="review-card">
+            <div class="review-rating">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Best pizza on campus! The crust is perfect and toppings are always fresh. My go-to meal every week."</p>
+            <h4 class="review-author">- Sangit Khanal</h4>
+            <span class="review-dish">Signature Pizza</span>
+        </div>
+        <div class="review-card">
+            <div class="review-rating">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">“The Butter Chicken was incredibly flavorful and perfectly creamy. Every bite was satisfying and well-seasoned. A must-try for anyone who loves rich, authentic taste!”</p>
+            <h4 class="review-author">- Raj Timsina</h4>
+            <span class="review-dish">Butter Chicken & Rice</span>
+        </div>
+        <div class="review-card">
+            <div class="review-rating">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Fast delivery and amazing food quality. The pasta is restaurant-level good. Worth every rupee!"</p>
+            <h4 class="review-author">- Shreyan Chaudhary</h4>
+            <span class="review-dish">Creamy Alfredo Pasta</span>
+        </div>
+        <div class="review-card">
+            <div class="review-rating">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">“The Butter Chicken was rich, creamy, and full of authentic flavor. Perfect portion size and absolutely satisfying. Highly recommended!”</p>
+            <h4 class="review-author">- Sumit Kumar Chaudhary</h4>
+            <span class="review-dish">Butter Chicken & Rice</span>
+        </div>
+        <div class="review-card">
+            <div class="review-rating">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">“Quick service and top-notch quality! The pasta was incredibly fresh and perfectly cooked truly premium taste. Absolutely worth the price!”</p>
+            <h4 class="review-author">- Sujan Acharya</h4>
+            <span class="review-dish">Signature Pizza</span>
+        </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="menu-faq">
+    <h2>FAQ</h2>
+    <p>Common questions about ordering and delivery.</p>
+    <div class="faq-grid">
+        <div class="faq-card">
+            <h3>🕐 What are your operating hours?</h3>
+            <p>We're open Monday to Saturday from 8:00 AM to 10:00 PM. Sunday hours are 9:00 AM to 9:00 PM.</p>
+        </div>
+        <div class="faq-card">
+            <h3>🚚 How long does delivery take?</h3>
+            <p>Average delivery time is 20-30 minutes depending on your location. We strive for fast service!</p>
+        </div>
+        <div class="faq-card">
+            <h3>💳 What payment methods do you accept?</h3>
+            <p>We accept cash on delivery, credit/debit cards, mobile wallets (eSewa, Khalti), and UPI payments.</p>
+        </div>
+        <div class="faq-card">
+            <h3>📦 Can I customize my order?</h3>
+            <p>Yes! Most dishes can be customized. Add special instructions in the order notes section.</p>
+        </div>
+        <div class="faq-card">
+            <h3>🔄 What's your cancellation policy?</h3>
+            <p>Orders can be cancelled within 2 minutes of placement for a full refund. After that, no refunds.</p>
+        </div>
+        <div class="faq-card">
+            <h3>🌿 Do you have vegetarian options?</h3>
+            <p>Absolutely! We have a wide variety of vegetarian, vegan, and gluten-free options clearly marked.</p>
+        </div>
+    </div>
+  </section>
+
+<script>
+// Mobile Menu Toggle
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+const body = document.body;
+
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        body.classList.toggle('menu-open');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            body.classList.remove('menu-open');
+        });
+    });
+}
+</script>
+
+<!-- ================= MODERN FOOTER ================= -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-brand" onclick="location.reload()" style="cursor: pointer;">
+            <h2>🍴 CanteenGo</h2>
+            <p>Your Campus Food Partner. Fast. Fresh. Reliable.</p>
+        </div>
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="11about.html">About Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#" onclick="alert('Join our team! Send your resume to careers@canteengo.com'); return false;">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="17question.html">Help Center</a></li>
+                    <li><a href="#contact" onclick="document.querySelector('.contact-section')?.scrollIntoView({behavior: 'smooth'}); return false;">Contact</a></li>
+                    <li><a href="16message.html">Report Issue</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Account</h4>
+                <ul>
+                    <li><a href="#" onclick="openLoginModal(); return false;">Login</a></li>
+                    <li><a href="#" onclick="alert('Profile feature coming soon! Currently in development.'); return false;">Profile</a></li>
+                    <li><a href="#" onclick="openCart(); return false;">Orders</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 CanteenGo. All Rights Reserved. | Designed by CanteenGo</p>
+    </div>
+</footer>
+
+<!-- ================= CATEGORY ITEMS MODAL ================= -->
+<div id="categoryModal" class="modal">
+    <div class="modal-content" style="max-width: 900px; max-height: 80vh; overflow-y: auto;">
+        <span class="close-btn" onclick="closeCategoryModal()">&times;</span>
+        <h2 id="category-title">Category Items</h2>
+        <div id="category-items-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 20px;">
+            <!-- Items will be populated here -->
+        </div>
+    </div>
+</div>
+
+<!-- ================= LOGIN MODAL ================= -->
+<div id="loginModal" class="modal">
+    <div class="modal-content" style="max-width: 450px;">
+        <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+        <h2 style="text-align: center; margin-bottom: 20px;">Login to CanteenGo</h2>
+        
+        <form onsubmit="return handleLogin(event)" style="display: flex; flex-direction: column; gap: 15px;">
+            <div>
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Email or Username</label>
+                <input type="text" id="login-username" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
+            </div>
+            
+            <div>
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Password</label>
+                <input type="password" id="login-password" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                    <input type="checkbox" style="cursor: pointer;">
+                    <span style="font-size: 14px;">Remember me</span>
+                </label>
+                <a href="#" onclick="alert('Please contact support at pratapaitwaldivyansh@gmail.com to reset your password.'); return false;" style="font-size: 14px; color: #667eea; text-decoration: none;">Forgot Password?</a>
+            </div>
+            
+            <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; margin-top: 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 16px;">Login</button>
+            
+            <p style="text-align: center; margin-top: 15px; font-size: 14px; color: #666;">
+                Don't have an account? 
+                <a href="#" onclick="alert('Registration feature coming soon!'); return false;" style="color: #667eea; text-decoration: none; font-weight: 600;">Sign Up</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+<!-- ================= RESTAURANT SELECTOR MODAL ================= -->
+<div id="restaurantSelectorModal" class="modal">
+    <div class="modal-content" style="max-width: 900px;">
+        <span class="close-btn" onclick="closeRestaurantSelector()">&times;</span>
+        <h2 style="text-align: center; margin-bottom: 10px;">Choose Your Restaurant</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 25px;">Select a restaurant to view their menu and start ordering</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <!-- Restaurant Cards -->
+            <div onclick="openRestaurantMenuModal('Samaya Rooftop Garden', 'Nepali')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🏔️</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Samaya Rooftop Garden</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Nepali Cuisine • ⭐ 4.9</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Dal Bhat, Momo, Thakali Thali</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Walnut Bistro', 'Indian')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍛</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Walnut Bistro</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Indian Cuisine • ⭐ 4.8</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Butter Chicken, Biryani, Naan</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Nepalaya Rooftop', 'Chinese')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🥡</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Nepalaya Rooftop</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Chinese Cuisine • ⭐ 4.7</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Chowmein, Fried Rice, Dumplings</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Sicily By Ts', 'Italian')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍕</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Sicily By Ts</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Italian Cuisine • ⭐ 4.6</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Pizza, Pasta, Risotto</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Fresh Bowl Kitchen', 'Healthy')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🥗</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Fresh Bowl Kitchen</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Healthy Cuisine • ⭐ 4.8</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Salads, Smoothie Bowls, Wraps</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Burger Junction', 'Fast Food')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍔</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Burger Junction</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Fast Food • ⭐ 4.5</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Burgers, Fries, Wings</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Sweet Paradise', 'Desserts')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍰</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Sweet Paradise</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Desserts • ⭐ 4.9</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Cakes, Ice Cream, Pastries</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= RESTAURANT MENU MODAL ================= -->
+<div id="restaurantMenuModal" class="modal">
+    <div class="modal-content" style="max-width: 1000px; max-height: 90vh; overflow-y: auto;">
+        <span class="close-btn" onclick="closeRestaurantMenuModal()">&times;</span>
+        <h2 id="restaurant-name" style="text-align: center; margin-bottom: 5px;"></h2>
+        <p id="restaurant-cuisine" style="text-align: center; color: #666; margin-bottom: 25px;"></p>
+        
+        <div id="restaurant-menu-items">
+            <!-- Menu items will be populated here -->
+        </div>
+    </div>
+</div>
+
+<!-- ================= SEARCH MODAL ================= -->
+<div id="searchModal" class="modal">
+    <div class="modal-content" style="max-width: 700px;">
+        <span class="close-btn" onclick="closeSearch()">&times;</span>
+        <h2>Search Menu</h2>
+        
+        <input type="text" id="searchInput" placeholder="Search for dishes, restaurants, combos..." 
+               style="width: 100%; padding: 12px; margin: 15px 0; font-size: 16px; border: 2px solid #ddd; border-radius: 8px;" 
+               oninput="performSearch()" autofocus>
+        
+        <div id="searchResults" style="max-height: 400px; overflow-y: auto; margin-top: 20px;">
+            <p style="text-align: center; color: #666;">Start typing to search...</p>
+        </div>
+    </div>
+</div>
+
+<!-- ================= DIETARY OPTIONS MODAL ================= -->
+<div id="dietaryModal" class="modal">
+    <div class="modal-content" style="max-width: 1000px; max-height: 90vh; overflow-y: auto;">
+        <span class="close-btn" onclick="closeDietaryModal()">&times;</span>
+        <h2 id="dietary-title" style="text-align: center; margin-bottom: 10px;"></h2>
+        <p id="dietary-subtitle" style="text-align: center; color: #666; margin-bottom: 30px; font-size: 16px;">Browse our delicious options below</p>
+        
+        <div id="dietary-items-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px;">
+            <!-- Dietary items will be populated here -->
+        </div>
+    </div>
+</div>
+
+<!-- ================= CART MODAL ================= -->
+<div id="cartModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeCart()">&times;</span>
+        <h2>Your Order List</h2>
+
+        <ul id="cart-items"></ul>
+
+        <h3>Total: Rs. <span id="cart-total">0</span></h3>
+
+        <button class="btn-primary" onclick="openPayment()">Checkout</button>
+    </div>
+</div>
+
+<!-- ================= PAYMENT MODAL ================= -->
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closePaymentModal()">&times;</span>
+        <h2>Payment</h2>
+
+        <form id="paymentForm" onsubmit="return processPayment(event)">
+            <label>Full Name</label>
+            <input type="text" id="payer-name" required>
+
+            <label>Card Number</label>
+            <input type="text" id="card-number" maxlength="19" placeholder="0000 0000 0000 0000" required>
+
+            <label>Expiry (MM/YY)</label>
+            <input type="text" id="card-expiry" maxlength="5" placeholder="MM/YY" required>
+
+            <label>CVV</label>
+            <input type="password" id="card-cvv" maxlength="4" required>
+
+            <p>Total: Rs. <span id="payment-amount">0</span></p>
+
+            <button type="submit" class="btn-primary">Pay Now</button>
+        </form>
+    </div>
+</div>
+
+<script>
+// Menu items by category
+const menuItems = {
+    'Italian': [
+        {name: 'Margherita Pizza', price: 450, desc: 'Classic tomato and mozzarella'},
+        {name: 'Pepperoni Pizza', price: 550, desc: 'Loaded with pepperoni'},
+        {name: 'Spaghetti Carbonara', price: 380, desc: 'Creamy pasta with bacon'},
+        {name: 'Fettuccine Alfredo', price: 349, desc: 'Rich creamy alfredo sauce'},
+        {name: 'Lasagna', price: 420, desc: 'Layered pasta with meat sauce'},
+        {name: 'Penne Arrabbiata', price: 320, desc: 'Spicy tomato pasta'},
+        {name: 'Ravioli', price: 399, desc: 'Cheese filled pasta'},
+        {name: 'Bruschetta', price: 220, desc: 'Toasted bread with toppings'},
+        {name: 'Tiramisu', price: 280, desc: 'Coffee flavored dessert'},
+        {name: 'Garlic Bread', price: 150, desc: 'Crispy garlic bread'},
+        {name: 'Minestrone Soup', price: 180, desc: 'Italian vegetable soup'},
+        {name: 'Caprese Salad', price: 250, desc: 'Tomato and mozzarella salad'}
+    ],
+    'Asian': [
+        {name: 'Chicken Fried Rice', price: 250, desc: 'Classic fried rice with chicken'},
+        {name: 'Veg Chowmein', price: 140, desc: 'Stir-fried noodles'},
+        {name: 'Chicken Chowmein', price: 180, desc: 'Noodles with chicken'},
+        {name: 'Egg Fried Rice', price: 200, desc: 'Rice with scrambled eggs'},
+        {name: 'Chicken Momo', price: 150, desc: 'Steamed dumplings'},
+        {name: 'Veg Momo', price: 120, desc: 'Vegetarian dumplings'},
+        {name: 'Chicken Thukpa', price: 180, desc: 'Noodle soup'},
+        {name: 'Pad Thai', price: 320, desc: 'Thai stir-fried noodles'},
+        {name: 'Butter Chicken', price: 429, desc: 'Rich tomato-butter gravy'},
+        {name: 'Chicken Tikka Masala', price: 399, desc: 'Creamy spiced chicken'},
+        {name: 'Biryani', price: 350, desc: 'Fragrant spiced rice'},
+        {name: 'Samosa', price: 60, desc: 'Crispy pastry with filling'},
+        {name: 'Spring Rolls', price: 120, desc: 'Crispy vegetable rolls'},
+        {name: 'Manchurian', price: 200, desc: 'Indo-Chinese gravy dish'},
+        {name: 'Hakka Noodles', price: 190, desc: 'Spicy stir-fried noodles'},
+        {name: 'Thai Curry', price: 380, desc: 'Creamy coconut curry'},
+        {name: 'Sushi Roll', price: 450, desc: 'Japanese rice rolls'},
+        {name: 'Ramen Bowl', price: 420, desc: 'Japanese noodle soup'}
+    ],
+    'Fast Food': [
+        {name: 'Cheese Burger', price: 180, desc: 'Juicy beef patty with cheese'},
+        {name: 'Chicken Burger', price: 200, desc: 'Crispy chicken patty'},
+        {name: 'Veggie Burger', price: 150, desc: 'Vegetarian patty'},
+        {name: 'French Fries', price: 100, desc: 'Crispy golden fries'},
+        {name: 'Loaded Fries', price: 180, desc: 'Fries with toppings'},
+        {name: 'Chicken Wings', price: 280, desc: 'Spicy chicken wings'},
+        {name: 'Hot Dog', price: 120, desc: 'Classic hot dog'},
+        {name: 'Grilled Sandwich', price: 120, desc: 'Toasted sandwich'},
+        {name: 'Club Sandwich', price: 200, desc: 'Triple decker sandwich'},
+        {name: 'Pizza Slice', price: 100, desc: 'Single pizza slice'},
+        {name: 'Nachos', price: 150, desc: 'Chips with cheese'},
+        {name: 'Onion Rings', price: 130, desc: 'Crispy onion rings'},
+        {name: 'Chicken Nuggets', price: 180, desc: 'Crispy nuggets'},
+        {name: 'Fish & Chips', price: 320, desc: 'Battered fish with fries'},
+        {name: 'Quesadilla', price: 220, desc: 'Cheese filled tortilla'}
+    ],
+    'Healthy': [
+        {name: 'Mediterranean Bowl', price: 389, desc: 'Fresh greens with feta'},
+        {name: 'Caesar Salad', price: 280, desc: 'Romaine with caesar dressing'},
+        {name: 'Greek Salad', price: 260, desc: 'Cucumber, tomato, olives'},
+        {name: 'Quinoa Bowl', price: 350, desc: 'Protein-packed quinoa'},
+        {name: 'Buddha Bowl', price: 380, desc: 'Nutritious grain bowl'},
+        {name: 'Grilled Chicken Salad', price: 320, desc: 'Healthy protein salad'},
+        {name: 'Fresh Fruit Bowl', price: 180, desc: 'Seasonal fresh fruits'},
+        {name: 'Smoothie Bowl', price: 250, desc: 'Thick smoothie with toppings'},
+        {name: 'Avocado Toast', price: 220, desc: 'Whole grain toast with avocado'},
+        {name: 'Detox Juice', price: 180, desc: 'Fresh vegetable juice'}
+    ],
+    'Desserts': [
+        {name: 'Chocolate Cake', price: 180, desc: 'Rich chocolate cake'},
+        {name: 'Vanilla Ice Cream', price: 120, desc: 'Creamy vanilla'},
+        {name: 'Chocolate Ice Cream', price: 120, desc: 'Rich chocolate flavor'},
+        {name: 'Strawberry Ice Cream', price: 130, desc: 'Fresh strawberry'},
+        {name: 'Brownie', price: 100, desc: 'Fudgy chocolate brownie'},
+        {name: 'Cheesecake', price: 220, desc: 'Creamy cheesecake'},
+        {name: 'Apple Pie', price: 180, desc: 'Classic apple pie'},
+        {name: 'Donut', price: 80, desc: 'Soft glazed donut'}
+    ],
+    'Beverages': [
+        {name: 'Coffee', price: 80, desc: 'Fresh brewed coffee'},
+        {name: 'Cappuccino', price: 120, desc: 'Espresso with steamed milk'},
+        {name: 'Latte', price: 130, desc: 'Smooth espresso drink'},
+        {name: 'Espresso', price: 90, desc: 'Strong coffee shot'},
+        {name: 'Mocha', price: 140, desc: 'Chocolate coffee'},
+        {name: 'Green Tea', price: 60, desc: 'Healthy green tea'},
+        {name: 'Black Tea', price: 50, desc: 'Classic black tea'},
+        {name: 'Masala Chai', price: 70, desc: 'Spiced Indian tea'},
+        {name: 'Mango Smoothie', price: 150, desc: 'Creamy mango drink'},
+        {name: 'Berry Smoothie', price: 160, desc: 'Mixed berry smoothie'},
+        {name: 'Fresh Orange Juice', price: 100, desc: 'Freshly squeezed'},
+        {name: 'Lemonade', price: 80, desc: 'Refreshing lemon drink'},
+        {name: 'Coke', price: 60, desc: 'Chilled cola'},
+        {name: 'Sprite', price: 60, desc: 'Lemon-lime soda'}
+    ]
+};
+
+// Dietary Options Menu Data - 10 items per category
+const dietaryItems = {
+    'Vegetarian': [
+        {name: 'Paneer Tikka Masala', price: 320, desc: 'Cottage cheese in rich creamy tomato gravy'},
+        {name: 'Veg Fried Rice', price: 240, desc: 'Stir-fried rice with fresh vegetables'},
+        {name: 'Margherita Pizza', price: 450, desc: 'Classic tomato and mozzarella cheese'},
+        {name: 'Palak Paneer', price: 280, desc: 'Spinach curry with cottage cheese cubes'},
+        {name: 'Veg Momo', price: 130, desc: 'Steamed dumplings with vegetable filling'},
+        {name: 'Cheese Sandwich', price: 140, desc: 'Grilled sandwich with melted cheese'},
+        {name: 'Dal Makhani', price: 250, desc: 'Creamy black lentils simmered overnight'},
+        {name: 'Veg Biryani', price: 300, desc: 'Fragrant basmati rice with mixed vegetables'},
+        {name: 'Mushroom Risotto', price: 380, desc: 'Creamy Italian rice with mushrooms'},
+        {name: 'Veggie Wrap', price: 180, desc: 'Whole wheat wrap with grilled vegetables'}
+    ],
+    'Vegan': [
+        {name: 'Buddha Bowl', price: 350, desc: 'Quinoa, chickpeas, avocado and greens'},
+        {name: 'Vegan Burger', price: 280, desc: 'Plant-based patty with fresh veggies'},
+        {name: 'Tofu Stir Fry', price: 320, desc: 'Crispy tofu with Asian vegetables'},
+        {name: 'Hummus Platter', price: 250, desc: 'Chickpea dip with pita bread and veggies'},
+        {name: 'Vegan Pasta', price: 340, desc: 'Penne with tomato basil sauce'},
+        {name: 'Falafel Wrap', price: 220, desc: 'Crispy chickpea fritters in tortilla'},
+        {name: 'Vegetable Curry', price: 280, desc: 'Mixed vegetables in coconut curry'},
+        {name: 'Quinoa Salad', price: 290, desc: 'Protein-rich quinoa with fresh veggies'},
+        {name: 'Vegan Spring Rolls', price: 180, desc: 'Rice paper rolls with vegetables'},
+        {name: 'Smoothie Bowl', price: 260, desc: 'Acai berries with granola and fruits'}
+    ],
+    'Gluten-Free': [
+        {name: 'Grilled Chicken Salad', price: 350, desc: 'Tender chicken with mixed greens'},
+        {name: 'Rice Bowl with Chicken', price: 320, desc: 'Steamed rice with grilled chicken'},
+        {name: 'Gluten-Free Pizza', price: 520, desc: 'Rice flour crust with premium toppings'},
+        {name: 'Grilled Fish', price: 420, desc: 'Fresh fish fillet with lemon butter'},
+        {name: 'Chicken Soup', price: 180, desc: 'Hearty chicken broth with vegetables'},
+        {name: 'Egg Omelette', price: 150, desc: 'Fluffy eggs with cheese and herbs'},
+        {name: 'Fruit Salad', price: 200, desc: 'Fresh seasonal fruits with honey'},
+        {name: 'Grilled Steak', price: 580, desc: 'Premium beef steak with vegetables'},
+        {name: 'Shrimp Rice Bowl', price: 450, desc: 'Jasmine rice with grilled shrimp'},
+        {name: 'Chicken Kebab', price: 320, desc: 'Spiced chicken skewers with dip'}
+    ],
+    'Keto': [
+        {name: 'Keto Burger Bowl', price: 380, desc: 'Burger patty with cheese, no bun'},
+        {name: 'Cauliflower Rice Bowl', price: 320, desc: 'Low-carb rice with grilled chicken'},
+        {name: 'Avocado Salad', price: 290, desc: 'Fresh avocado with greens and olive oil'},
+        {name: 'Grilled Salmon', price: 520, desc: 'Omega-3 rich fish with butter sauce'},
+        {name: 'Cheese Platter', price: 350, desc: 'Assorted cheeses with nuts'},
+        {name: 'Bacon & Eggs', price: 280, desc: 'Crispy bacon with scrambled eggs'},
+        {name: 'Chicken Wings', price: 340, desc: 'Crispy wings with sugar-free sauce'},
+        {name: 'Zucchini Noodles', price: 310, desc: 'Veggie noodles with creamy sauce'},
+        {name: 'Keto Pancakes', price: 250, desc: 'Almond flour pancakes with butter'},
+        {name: 'Beef Steak', price: 580, desc: 'High-protein grilled beef steak'}
+    ],
+    'Halal': [
+        {name: 'Chicken Biryani', price: 350, desc: 'Fragrant rice with halal chicken'},
+        {name: 'Mutton Curry', price: 420, desc: 'Tender halal mutton in spiced gravy'},
+        {name: 'Chicken Shawarma', price: 220, desc: 'Marinated halal chicken wrap'},
+        {name: 'Beef Kebab', price: 320, desc: 'Grilled halal beef skewers'},
+        {name: 'Chicken Tikka', price: 280, desc: 'Tandoori halal chicken pieces'},
+        {name: 'Lamb Korma', price: 450, desc: 'Halal lamb in creamy curry'},
+        {name: 'Chicken Fried Rice', price: 250, desc: 'Rice with halal chicken pieces'},
+        {name: 'Beef Burger', price: 300, desc: 'Halal beef patty with cheese'},
+        {name: 'Chicken Soup', price: 180, desc: 'Hearty halal chicken broth'},
+        {name: 'Mixed Grill Platter', price: 550, desc: 'Assorted halal grilled meats'}
+    ]
+};
+
+let cart = [];
+
+// Open category modal
+function openCategoryModal(category) {
+    document.getElementById('category-title').innerText = category;
+    const itemsGrid = document.getElementById('category-items-grid');
+    itemsGrid.innerHTML = '';
+    
+    const items = menuItems[category] || [];
+    items.forEach(item => {
+        const itemCard = document.createElement('div');
+        itemCard.style.cssText = 'border: 1px solid #ddd; border-radius: 12px; padding: 20px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);';
+        itemCard.innerHTML = `
+            <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #333;">${item.name}</h3>
+            <p style="margin: 0 0 12px 0; color: #666; font-size: 14px;">${item.desc}</p>
+            <p style="margin: 0 0 15px 0; font-size: 20px; font-weight: bold; color: #667eea;">Rs. ${item.price}</p>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="display: flex; align-items: center; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                    <button onclick="changeQuantity(this, -1)" style="padding: 8px 12px; border: none; background: #f5f5f5; cursor: pointer; font-size: 18px;">-</button>
+                    <input type="number" value="1" min="1" readonly style="width: 50px; text-align: center; border: none; padding: 8px 0; font-size: 16px;">
+                    <button onclick="changeQuantity(this, 1)" style="padding: 8px 12px; border: none; background: #f5f5f5; cursor: pointer; font-size: 18px;">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity('${item.name}', ${item.price}, this)" style="flex: 1; padding: 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Add to Cart</button>
+            </div>
+        `;
+        itemsGrid.appendChild(itemCard);
+    });
+    
+    document.getElementById('categoryModal').style.display = 'flex';
+}
+
+// Close category modal
+function closeCategoryModal() {
+    document.getElementById('categoryModal').style.display = 'none';
+}
+
+// Open dietary modal
+function openDietaryModal(dietType) {
+    document.getElementById('dietary-title').innerText = dietType + ' Options';
+    const itemsGrid = document.getElementById('dietary-items-grid');
+    itemsGrid.innerHTML = '';
+    
+    const items = dietaryItems[dietType] || [];
+    items.forEach(item => {
+        const itemCard = document.createElement('div');
+        itemCard.style.cssText = 'border: 1px solid #ddd; border-radius: 12px; padding: 20px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;';
+        itemCard.onmouseover = function() { this.style.transform = 'translateY(-5px)'; this.style.boxShadow = '0 8px 20px rgba(123,104,238,0.2)'; };
+        itemCard.onmouseout = function() { this.style.transform = 'translateY(0)'; this.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)'; };
+        
+        itemCard.innerHTML = `
+            <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #333; font-weight: 700;">${item.name}</h3>
+            <p style="margin: 0 0 12px 0; color: #666; font-size: 14px; line-height: 1.5;">${item.desc}</p>
+            <p style="margin: 0 0 15px 0; font-size: 20px; font-weight: bold; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Rs. ${item.price}</p>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="display: flex; align-items: center; border: 2px solid #e5e7eb; border-radius: 8px; overflow: hidden;">
+                    <button onclick="changeQuantity(this, -1)" style="padding: 8px 12px; border: none; background: #f5f5f5; cursor: pointer; font-size: 18px; font-weight: 600; color: #667eea; transition: background 0.2s;" onmouseover="this.style.background='#e5e7eb'" onmouseout="this.style.background='#f5f5f5'">−</button>
+                    <input type="number" value="1" min="1" readonly style="width: 50px; text-align: center; border: none; padding: 8px 0; font-size: 16px; font-weight: 600; color: #333;">
+                    <button onclick="changeQuantity(this, 1)" style="padding: 8px 12px; border: none; background: #f5f5f5; cursor: pointer; font-size: 18px; font-weight: 600; color: #667eea; transition: background 0.2s;" onmouseover="this.style.background='#e5e7eb'" onmouseout="this.style.background='#f5f5f5'">+</button>
+                </div>
+                <button onclick="addToCartWithQuantity('${item.name}', ${item.price}, this)" style="flex: 1; padding: 10px 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(102,126,234,0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(102,126,234,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(102,126,234,0.3)'">Add to Cart</button>
+            </div>
+        `;
+        itemsGrid.appendChild(itemCard);
+    });
+    
+    document.getElementById('dietaryModal').style.display = 'flex';
+}
+
+// Close dietary modal
+function closeDietaryModal() {
+    document.getElementById('dietaryModal').style.display = 'none';
+}
+
+// Change quantity
+function changeQuantity(btn, delta) {
+    const input = btn.parentElement.querySelector('input[type="number"]');
+    const currentValue = parseInt(input.value);
+    const newValue = Math.max(1, currentValue + delta);
+    input.value = newValue;
+}
+
+// Add to cart with quantity
+function addToCartWithQuantity(name, price, btn) {
+    const quantityInput = btn.parentElement.querySelector('input[type="number"]');
+    const quantity = parseInt(quantityInput.value);
+    
+    for (let i = 0; i < quantity; i++) {
+        cart.push({name, price});
+    }
+    
+    updateCart();
+    alert(quantity + 'x ' + name + ' added to cart!');
+    quantityInput.value = 1; // Reset quantity
+}
+
+// Add item to cart (original function for other buttons)
+function addToCart(name, price) {
+    cart.push({name, price});
+    updateCart();
+    // Show brief confirmation
+    alert(name + ' added to cart!');
+}
+
+// Update cart UI
+function updateCart() {
+    document.getElementById("cart-count").innerText = cart.length;
+
+    let cartItems = document.getElementById("cart-items");
+    let total = 0;
+    cartItems.innerHTML = "";
+
+    cart.forEach((item, idx) => {
+        let li = document.createElement("li");
+        li.innerText = item.name + " - Rs. " + item.price;
+
+        // Remove button
+        let remove = document.createElement('button');
+        remove.innerText = 'Remove';
+        remove.style.marginLeft = '10px';
+        remove.onclick = function() { cart.splice(idx,1); updateCart(); };
+        li.appendChild(remove);
+
+        cartItems.appendChild(li);
+        total += item.price;
+    });
+
+    document.getElementById("cart-total").innerText = total;
+}
+
+// Open cart modal
+function openCart() {
+    updateCart();
+    document.getElementById("cartModal").style.display = "flex";
+}
+
+// Close cart modal
+function closeCart() {
+    document.getElementById("cartModal").style.display = "none";
+}
+
+// Open payment modal
+function openPayment() {
+    if (cart.length === 0) {
+        alert('Your cart is empty. Add items first.');
+        return;
+    }
+    const total = cart.reduce((s, i) => s + i.price, 0);
+    document.getElementById('payment-amount').innerText = total;
+    document.getElementById('paymentModal').style.display = 'flex';
+}
+
+// Close payment modal
+function closePaymentModal() {
+    document.getElementById('paymentModal').style.display = 'none';
+}
+
+// Process payment
+function processPayment(e) {
+    e.preventDefault();
+    const name = document.getElementById('payer-name').value.trim();
+    const card = document.getElementById('card-number').value.replace(/\s+/g, '');
+    const exp = document.getElementById('card-expiry').value.trim();
+    const cvv = document.getElementById('card-cvv').value.trim();
+
+    if (!name || card.length < 13 || !/^[0-9]+$/.test(card) || !/^\d{2}\/\d{2}$/.test(exp) || cvv.length < 3) {
+        alert('Please enter valid payment details.');
+        return false;
+    }
+
+    // Simulate processing
+    const payBtn = document.querySelector('#paymentForm button[type=submit]');
+    payBtn.disabled = true;
+    payBtn.innerText = 'Processing...';
+
+    setTimeout(() => {
+        payBtn.disabled = false;
+        payBtn.innerText = 'Pay Now';
+        alert('Payment successful! Thank you for your order.');
+
+        // Clear cart and update UI
+        cart = [];
+        updateCart();
+        closePaymentModal();
+        closeCart();
+        document.getElementById('paymentForm').reset();
+    }, 1000);
+
+    return false;
+}
+
+// Close modals when clicking outside
+window.onclick = function(e) {
+    ['cartModal', 'paymentModal', 'categoryModal', 'searchModal', 'restaurantSelectorModal', 'restaurantMenuModal', 'loginModal', 'dietaryModal'].forEach(id => {
+        const m = document.getElementById(id);
+        if (m && e.target === m) m.style.display = 'none';
+    });
+}
+
+// ================= SEARCH FUNCTIONALITY =================
+// Complete searchable items database
+const searchableItems = [
+    // Popular Dishes
+    {name: 'Cheese Burger', price: 180, category: 'Burger', page: 'Home', type: 'dish'},
+    {name: 'Margherita Pizza', price: 550, category: 'Pizza', page: 'Home', type: 'dish'},
+    {name: 'Chicken Momo', price: 150, category: 'Momo', page: 'Home', type: 'dish'},
+    {name: 'Grilled Sandwich', price: 120, category: 'Sandwich', page: 'Home', type: 'dish'},
+    {name: 'Veg Chowmein', price: 140, category: 'Noodles', page: 'Home', type: 'dish'},
+    {name: 'French Fries', price: 100, category: 'Sides', page: 'Home', type: 'dish'},
+    
+    // Combos
+    {name: 'Combo 1 - Main + Side + Beverage', price: 2999, category: 'Combo', page: 'Menu', type: 'combo'},
+    {name: 'Combo 2 - Family Pack', price: 3999, category: 'Combo', page: 'Menu', type: 'combo'},
+    {name: 'Combo 3 - Student Special', price: 4999, category: 'Combo', page: 'Menu', type: 'combo'},
+    
+    // Chef Picks
+    {name: 'Creamy Alfredo Pasta', price: 349, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Grilled Chicken Breast', price: 399, category: 'Healthy', page: 'Menu', type: 'dish'},
+    {name: 'Tandoori Paneer Tikka', price: 299, category: 'Indian', page: 'Menu', type: 'dish'},
+    {name: 'Chocolate Lava Cake', price: 499, category: 'Dessert', page: 'Menu', type: 'dish'},
+    
+    // Italian
+    {name: 'Margherita Pizza', price: 550, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Pepperoni Pizza', price: 650, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Vegetarian Pizza', price: 600, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Carbonara Pasta', price: 450, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Creamy Alfredo Pasta', price: 349, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Bolognese Pasta', price: 480, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Penne Arrabbiata', price: 420, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Lasagna', price: 520, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Garlic Bread', price: 150, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Bruschetta', price: 180, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Tiramisu', price: 250, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Panna Cotta', price: 220, category: 'Italian', page: 'Menu', type: 'dish'},
+    
+    // Asian
+    {name: 'Chicken Fried Rice', price: 280, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Veg Fried Rice', price: 240, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Hakka Noodles', price: 260, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Chowmein', price: 250, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Spring Rolls', price: 180, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Momo', price: 150, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Veg Momo', price: 130, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Buff Momo', price: 160, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Fried Momo', price: 170, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Jhol Momo', price: 180, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Thukpa', price: 220, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Veg Thukpa', price: 200, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Chilli Chicken', price: 320, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Manchurian', price: 280, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Sweet & Sour Chicken', price: 340, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Pad Thai', price: 380, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Tom Yum Soup', price: 250, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Sushi Platter', price: 650, category: 'Asian', page: 'Menu', type: 'dish'},
+    
+    // Fast Food
+    {name: 'Classic Burger', price: 180, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Cheese Burger', price: 220, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Burger', price: 250, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Veg Burger', price: 160, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Double Patty Burger', price: 320, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'French Fries', price: 100, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Loaded Fries', price: 180, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Wings', price: 280, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Nuggets', price: 220, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Hot Dog', price: 150, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Grilled Sandwich', price: 120, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Club Sandwich', price: 200, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Wrap', price: 180, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Veg Wrap', price: 150, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Onion Rings', price: 120, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    
+    // Restaurants
+    {name: 'Samaya Rooftop Garden', cuisine: 'Nepali', rating: '4.9', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Walnut Bistro', cuisine: 'Indian', rating: '4.8', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Nepalaya Rooftop', cuisine: 'Chinese', rating: '4.7', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Sicily By Ts', cuisine: 'Italian', rating: '4.6', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Fresh Bowl Kitchen', cuisine: 'Healthy', rating: '4.8', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Burger Junction', cuisine: 'Fast Food', rating: '4.5', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Sweet Paradise', cuisine: 'Desserts', rating: '4.9', page: 'Restaurants', type: 'restaurant'}
+];
+
+// Open search modal
+function openSearch() {
+    document.getElementById('searchModal').style.display = 'flex';
+    setTimeout(() => {
+        document.getElementById('searchInput').focus();
+    }, 100);
+}
+
+// Close search modal
+function closeSearch() {
+    document.getElementById('searchModal').style.display = 'none';
+    document.getElementById('searchInput').value = '';
+    document.getElementById('searchResults').innerHTML = '<p style="text-align: center; color: #666;">Start typing to search...</p>';
+}
+
+// Perform search
+function performSearch() {
+    const query = document.getElementById('searchInput').value.toLowerCase().trim();
+    const resultsContainer = document.getElementById('searchResults');
+    
+    if (query === '') {
+        resultsContainer.innerHTML = '<p style="text-align: center; color: #666;">Start typing to search...</p>';
+        return;
+    }
+    
+    // Filter items based on search query
+    const results = searchableItems.filter(item => 
+        item.name.toLowerCase().includes(query) || 
+        (item.category && item.category.toLowerCase().includes(query)) ||
+        (item.cuisine && item.cuisine.toLowerCase().includes(query))
+    );
+    
+    if (results.length === 0) {
+        resultsContainer.innerHTML = '<p style="text-align: center; color: #666;">No results found for "' + query + '"</p>';
+        return;
+    }
+    
+    // Display results
+    let html = '<div style="display: grid; gap: 15px;">';
+    
+    results.forEach(item => {
+        if (item.type === 'restaurant') {
+            html += `
+                <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; display: flex; justify-content: space-between; align-items: center; background: #f9f9f9;">
+                    <div>
+                        <h3 style="margin: 0 0 5px 0; font-size: 16px;">${item.name}</h3>
+                        <p style="margin: 0; color: #666; font-size: 14px;">${item.cuisine} • ⭐ ${item.rating} • ${item.page}</p>
+                    </div>
+                    <button onclick='window.location.href="8restaurants.html"' style="padding: 8px 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; cursor: pointer;">View</button>
+                </div>
+            `;
+        } else {
+            html += `
+                <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h3 style="margin: 0 0 5px 0; font-size: 16px;">${item.name}</h3>
+                        <p style="margin: 0; color: #666; font-size: 14px;">${item.category} • Rs. ${item.price} • ${item.page}</p>
+                    </div>
+                    <button onclick='addToCart("${item.name}", ${item.price}); showAddedToast()' style="padding: 8px 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; cursor: pointer;">Add to Cart</button>
+                </div>
+            `;
+        }
+    });
+    
+    html += '</div>';
+    resultsContainer.innerHTML = html;
+}
+
+// Show toast notification when item added
+function showAddedToast() {
+    const toast = document.createElement('div');
+    toast.innerText = '✓ Added to cart!';
+    toast.style.cssText = 'position: fixed; bottom: 30px; right: 30px; background: #10b981; color: white; padding: 15px 25px; border-radius: 8px; font-weight: 600; z-index: 10000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);';
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.remove();
+    }, 2000);
+}
+
+// Connect search button
+document.addEventListener('DOMContentLoaded', function() {
+    const searchBtn = document.getElementById('searchBtn');
+    if (searchBtn) {
+        searchBtn.addEventListener('click', openSearch);
+    }
+});
+
+// ================= RESTAURANT SELECTOR & MENU =================
+// Open restaurant selector modal
+function openRestaurantSelector() {
+    document.getElementById('restaurantSelectorModal').style.display = 'flex';
+}
+
+// Close restaurant selector modal
+function closeRestaurantSelector() {
+    document.getElementById('restaurantSelectorModal').style.display = 'none';
+}
+
+// Restaurant menu data
+const restaurantMenus = {
+    'Nepali': [
+        {name: 'Dal Bhat Set', price: 250, category: 'Main Course'},
+        {name: 'Chicken Momo (10 pcs)', price: 150, category: 'Appetizer'},
+        {name: 'Veg Momo (10 pcs)', price: 130, category: 'Appetizer'},
+        {name: 'Thakali Thali', price: 350, category: 'Main Course'},
+        {name: 'Newari Khaja Set', price: 400, category: 'Specialty'},
+        {name: 'Chatamari', price: 120, category: 'Snacks'},
+        {name: 'Sel Roti (5 pcs)', price: 100, category: 'Snacks'},
+        {name: 'Yomari (3 pcs)', price: 150, category: 'Dessert'},
+        {name: 'Gundruk Soup', price: 100, category: 'Soup'},
+        {name: 'Aloo Tama', price: 180, category: 'Side Dish'}
+    ],
+    'Indian': [
+        {name: 'Butter Chicken', price: 380, category: 'Main Course'},
+        {name: 'Chicken Biryani', price: 320, category: 'Rice'},
+        {name: 'Paneer Tikka Masala', price: 280, category: 'Main Course'},
+        {name: 'Garlic Naan', price: 50, category: 'Bread'},
+        {name: 'Tandoori Chicken', price: 350, category: 'Tandoori'},
+        {name: 'Palak Paneer', price: 250, category: 'Vegetarian'},
+        {name: 'Chicken Tikka', price: 320, category: 'Tandoori'},
+        {name: 'Masala Dosa', price: 180, category: 'South Indian'},
+        {name: 'Samosa (2 pcs)', price: 60, category: 'Snacks'},
+        {name: 'Gulab Jamun', price: 100, category: 'Dessert'}
+    ],
+    'Chinese': [
+        {name: 'Chicken Fried Rice', price: 280, category: 'Rice'},
+        {name: 'Veg Chowmein', price: 220, category: 'Noodles'},
+        {name: 'Chicken Chowmein', price: 250, category: 'Noodles'},
+        {name: 'Spring Rolls (6 pcs)', price: 180, category: 'Appetizer'},
+        {name: 'Sweet & Sour Chicken', price: 340, category: 'Main Course'},
+        {name: 'Manchurian', price: 280, category: 'Main Course'},
+        {name: 'Hakka Noodles', price: 260, category: 'Noodles'},
+        {name: 'Fried Momo (10 pcs)', price: 170, category: 'Appetizer'},
+        {name: 'Hot & Sour Soup', price: 150, category: 'Soup'},
+        {name: 'Kung Pao Chicken', price: 360, category: 'Main Course'}
+    ],
+    'Italian': [
+        {name: 'Margherita Pizza', price: 550, category: 'Pizza'},
+        {name: 'Pepperoni Pizza', price: 650, category: 'Pizza'},
+        {name: 'Carbonara Pasta', price: 450, category: 'Pasta'},
+        {name: 'Alfredo Pasta', price: 420, category: 'Pasta'},
+        {name: 'Lasagna', price: 520, category: 'Baked'},
+        {name: 'Garlic Bread', price: 150, category: 'Sides'},
+        {name: 'Bruschetta', price: 180, category: 'Appetizer'},
+        {name: 'Ravioli', price: 480, category: 'Pasta'},
+        {name: 'Tiramisu', price: 250, category: 'Dessert'},
+        {name: 'Panna Cotta', price: 220, category: 'Dessert'}
+    ],
+    'Healthy': [
+        {name: 'Green Goddess Bowl', price: 380, category: 'Bowls'},
+        {name: 'Mediterranean Bowl', price: 389, category: 'Bowls'},
+        {name: 'Quinoa Power Bowl', price: 420, category: 'Bowls'},
+        {name: 'Greek Salad', price: 280, category: 'Salads'},
+        {name: 'Caesar Salad', price: 260, category: 'Salads'},
+        {name: 'Avocado Toast', price: 250, category: 'Toast'},
+        {name: 'Smoothie Bowl', price: 320, category: 'Bowls'},
+        {name: 'Fruit Salad', price: 200, category: 'Salads'},
+        {name: 'Green Smoothie', price: 180, category: 'Drinks'},
+        {name: 'Protein Bowl', price: 450, category: 'Bowls'}
+    ],
+    'Fast Food': [
+        {name: 'Classic Burger', price: 180, category: 'Burgers'},
+        {name: 'Cheese Burger', price: 220, category: 'Burgers'},
+        {name: 'Chicken Burger', price: 250, category: 'Burgers'},
+        {name: 'French Fries', price: 100, category: 'Sides'},
+        {name: 'Loaded Fries', price: 180, category: 'Sides'},
+        {name: 'Chicken Wings (8 pcs)', price: 280, category: 'Snacks'},
+        {name: 'Chicken Nuggets (10 pcs)', price: 220, category: 'Snacks'},
+        {name: 'Hot Dog', price: 150, category: 'Snacks'},
+        {name: 'Onion Rings', price: 120, category: 'Sides'},
+        {name: 'Milkshake', price: 180, category: 'Drinks'}
+    ],
+    'Desserts': [
+        {name: 'Red Velvet Cake', price: 200, category: 'Cakes'},
+        {name: 'Chocolate Cake', price: 180, category: 'Cakes'},
+        {name: 'Cheesecake', price: 250, category: 'Cakes'},
+        {name: 'Vanilla Ice Cream', price: 120, category: 'Ice Cream'},
+        {name: 'Chocolate Ice Cream', price: 120, category: 'Ice Cream'},
+        {name: 'Brownie Sundae', price: 220, category: 'Special'},
+        {name: 'Tiramisu', price: 250, category: 'Italian'},
+        {name: 'Donut (3 pcs)', price: 150, category: 'Pastries'},
+        {name: 'Chocolate Mousse', price: 180, category: 'Special'},
+        {name: 'Apple Pie', price: 200, category: 'Pies'},
+        {name: 'Cupcake (2 pcs)', price: 140, category: 'Cakes'},
+        {name: 'Waffle with Ice Cream', price: 280, category: 'Special'}
+    ]
+};
+
+// Open restaurant menu modal
+function openRestaurantMenuModal(restaurantName, cuisine) {
+    // Close selector modal
+    closeRestaurantSelector();
+    
+    // Set restaurant info
+    document.getElementById('restaurant-name').innerText = restaurantName;
+    document.getElementById('restaurant-cuisine').innerText = cuisine + ' Cuisine';
+    
+    // Get menu items for this cuisine
+    const menuItems = restaurantMenus[cuisine] || [];
+    
+    // Group items by category
+    const categories = {};
+    menuItems.forEach(item => {
+        if (!categories[item.category]) {
+            categories[item.category] = [];
+        }
+        categories[item.category].push(item);
+    });
+    
+    // Build menu HTML
+    let menuHTML = '';
+    for (const [category, items] of Object.entries(categories)) {
+        menuHTML += `
+            <div style="margin-bottom: 30px;">
+                <h3 style="padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #667eea; margin-bottom: 15px;">${category}</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px;">
+        `;
+        
+        items.forEach(item => {
+            menuHTML += `
+                <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fff; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
+                    <h4 style="margin: 0 0 8px 0; font-size: 16px; color: #333;">${item.name}</h4>
+                    <p style="margin: 0 0 12px 0; font-size: 18px; font-weight: bold; color: #667eea;">Rs. ${item.price}</p>
+                    <button onclick="addToCart('${item.name}', ${item.price}); showAddedToast()" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Add to Cart</button>
+                </div>
+            `;
+        });
+        
+        menuHTML += `</div></div>`;
+    }
+    
+    document.getElementById('restaurant-menu-items').innerHTML = menuHTML;
+    document.getElementById('restaurantMenuModal').style.display = 'flex';
+}
+
+// Close restaurant menu modal
+function closeRestaurantMenuModal() {
+    document.getElementById('restaurantMenuModal').style.display = 'none';
+}
+
+// ================= LOGIN MODAL =================
+function openLoginModal() {
+    document.getElementById('loginModal').style.display = 'flex';
+}
+
+function closeLoginModal() {
+    document.getElementById('loginModal').style.display = 'none';
+    document.getElementById('login-username').value = '';
+    document.getElementById('login-password').value = '';
+}
+
+function handleLogin(e) {
+    e.preventDefault();
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+    
+    if (username && password) {
+        alert('Login successful! Welcome to CanteenGo, ' + username + '!');
+        closeLoginModal();
+    } else {
+        alert('Please enter both username and password.');
+    }
+    return false;
+}
+</script>
+
+<script src="1herosec.js"></script>
+
+</body>
+</html>

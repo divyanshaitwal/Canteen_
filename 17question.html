@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help Center - CanteenGo</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/17question.css" />
+  <link rel="stylesheet" href="css/1herosec.css">
+  <link rel="stylesheet" href="css/18footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="navbar-container">
+        <div class="logo" onclick="location.reload()" style="cursor: pointer;">
+            <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="url(#logoGradient)"/>
+                <path d="M16 8C12.6863 8 10 10.6863 10 14C10 17.3137 12.6863 20 16 20C19.3137 20 22 17.3137 22 14C22 10.6863 19.3137 8 16 8Z" fill="white"/>
+                <path d="M16 22C14.8954 22 14 22.8954 14 24C14 25.1046 14.8954 26 16 26C17.1046 26 18 25.1046 18 24C18 22.8954 17.1046 22 16 22Z" fill="white"/>
+                <defs>
+                    <linearGradient id="logoGradient" x1="0" y1="0" x2="32" y2="32">
+                        <stop offset="0%" stop-color="#667eea"/>
+                        <stop offset="50%" stop-color="#764ba2"/>
+                        <stop offset="100%" stop-color="#f093fb"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="logo-text">CanteenGo</span>
+        </div>
+
+        <nav class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+                <li><a href="1herosec.html" class="nav-link">Home</a></li>
+                <li><a href="10menu.html" class="nav-link">Menu</a></li>
+                <li><a href="8restaurants.html" class="nav-link">Restaurants</a></li>
+                <li><a href="11about.html" class="nav-link">About Us</a></li>
+                <li><a href="6customer.html" class="nav-link">Feedback</a></li>
+                <li><a href="17question.html" class="nav-link active">Help Center</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="icon-btn" id="searchBtn" aria-label="Search">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18 18l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <a class="cart-link" href="#" onclick="openCart()">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1h3l2.68 13.39a1 1 0 0 0 1 .61h9.72a1 1 0 0 0 1-.78l1.5-7.5a1 1 0 0 0-1-.72H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8" cy="18" r="1" fill="currentColor"/>
+                    <circle cx="16" cy="18" r="1" fill="currentColor"/>
+                </svg>
+                <span class="cart-badge" id="cart-count">0</span>
+            </a>
+            <button class="btn-order" onclick="openRestaurantSelector()">Order Now</button>
+        </div>
+
+        <button class="hamburger" id="navToggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </div>
+</header>
+
+<!-- HELP CENTER HERO SECTION -->
+<section class="help-hero">
+  <div class="help-hero-container">
+    <span class="section-tag">❓ Help Center</span>
+    <h1 class="help-main-heading">How Can We Help You?</h1>
+    <p class="help-hero-description">Find answers to your questions and get support anytime</p>
+    
+    <!-- Search Bar -->
+    <div class="help-search-container">
+      <div class="search-box">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18 18l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <input type="text" id="helpSearch" placeholder="Search for help articles, FAQs, guides..." />
+        <button class="search-clear" id="clearSearch" style="display: none;">×</button>
+      </div>
+      <div class="popular-searches">
+        <span class="popular-label">Popular:</span>
+        <button class="search-tag" data-query="track order">Track Order</button>
+        <button class="search-tag" data-query="refund policy">Refund</button>
+        <button class="search-tag" data-query="payment methods">Payment</button>
+        <button class="search-tag" data-query="delivery time">Delivery</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR TOPICS SECTION -->
+<section class="popular-topics-section">
+  <div class="popular-topics-container">
+    <span class="section-tag">🔥 Popular Topics</span>
+    <h2 class="section-heading">Quick Access to Common Questions</h2>
+    
+    <div class="topics-grid">
+      <a href="#getting-started" class="topic-card">
+        <div class="topic-icon">🚀</div>
+        <h3>Getting Started</h3>
+        <p>Learn how to use CanteenGo</p>
+        <span class="topic-arrow">→</span>
+      </a>
+      
+      <a href="#orders" class="topic-card">
+        <div class="topic-icon">📦</div>
+        <h3>Orders & Delivery</h3>
+        <p>Track and manage orders</p>
+        <span class="topic-arrow">→</span>
+      </a>
+      
+      <a href="#payments" class="topic-card">
+        <div class="topic-icon">💳</div>
+        <h3>Payments & Refunds</h3>
+        <p>Billing and payment help</p>
+        <span class="topic-arrow">→</span>
+      </a>
+      
+      <a href="#account" class="topic-card">
+        <div class="topic-icon">👤</div>
+        <h3>Account Settings</h3>
+        <p>Manage your profile</p>
+        <span class="topic-arrow">→</span>
+      </a>
+      
+      <a href="#technical" class="topic-card">
+        <div class="topic-icon">🔧</div>
+        <h3>Technical Support</h3>
+        <p>App issues and fixes</p>
+        <span class="topic-arrow">→</span>
+      </a>
+      
+      <a href="#safety" class="topic-card">
+        <div class="topic-icon">🛡️</div>
+        <h3>Safety & Quality</h3>
+        <p>Food safety standards</p>
+        <span class="topic-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GETTING STARTED FAQ -->
+<section class="faq-section" id="getting-started">
+  <div class="faq-container">
+    <span class="section-tag">🚀 Getting Started</span>
+    <h2 class="section-heading">New to CanteenGo? Start Here</h2>
+    
+    <div class="faq-grid">
+      <div class="faq-item" data-search-content="how to sign up create account register canteengo">
+        <div class="faq-question">
+          <span class="faq-icon">📝</span>
+          <h3>How do I sign up for CanteenGo?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Signing up is easy! Download the CanteenGo app from Google Play Store or Apple App Store. Open the app and click "Sign Up" on the welcome screen. Enter your name, email, phone number, and create a password. Verify your phone number with the OTP code sent to you. Complete your profile by adding your campus details and delivery address. That's it! You're ready to start ordering delicious food from your favorite campus canteens.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="first order place order how to order food">
+        <div class="faq-question">
+          <span class="faq-icon">🍽️</span>
+          <h3>How do I place my first order?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Placing your first order is simple: 1) Browse restaurants and menus by tapping "Explore" on the home screen, 2) Select items you want and add them to your cart, 3) Review your cart and apply any promo codes, 4) Choose your delivery location (dorm, library, classroom), 5) Select payment method (card, campus wallet, or cash), 6) Confirm and place your order. You'll receive real-time updates and can track your delivery live on the map!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="how app works features campus food delivery">
+        <div class="faq-question">
+          <span class="faq-icon">📱</span>
+          <h3>What features does the app offer?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>CanteenGo offers comprehensive features: Real-time order tracking with live map, schedule orders in advance for busy days, browse menus with photos and ratings, secure payments with multiple options, loyalty rewards program with points and discounts, saved addresses and favorite orders for quick reordering, dietary filters (vegetarian, vegan, gluten-free), group ordering for study sessions, order history and reorder functionality, 24/7 customer support chat, and exclusive student discounts!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="available campuses colleges universities locations">
+        <div class="faq-question">
+          <span class="faq-icon">🏫</span>
+          <h3>Which campuses are available?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>CanteenGo currently serves 50+ college campuses across major cities. We're expanding rapidly! Check the app's "Location" section to see if your campus is covered. If not, you can submit a request to bring CanteenGo to your campus. We partner with campus canteens, food courts, and nearby restaurants to bring you maximum variety and convenience.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDERS & DELIVERY FAQ -->
+<section class="faq-section" id="orders">
+  <div class="faq-container">
+    <span class="section-tag">📦 Orders & Delivery</span>
+    <h2 class="section-heading">Everything About Your Orders</h2>
+    
+    <div class="faq-grid">
+      <div class="faq-item" data-search-content="track order delivery status where is my order">
+        <div class="faq-question">
+          <span class="faq-icon">📍</span>
+          <h3>How do I track my order?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Tracking is built right into the app! Go to "My Orders" from the bottom menu and select your active order. You'll see live updates: Order Confirmed → Preparing → Out for Delivery → Delivered. The map shows your delivery partner's real-time location. You'll get push notifications at each stage. Estimated delivery time updates automatically based on preparation time and distance.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="delivery time how long wait food arrive">
+        <div class="faq-question">
+          <span class="faq-icon">⏱️</span>
+          <h3>How long does delivery take?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Average delivery time is 15-30 minutes depending on: restaurant preparation time (5-15 mins), distance to your location (within campus usually 5-15 mins), and current order volume (peak lunch/dinner times may take longer). You'll see estimated delivery time before placing your order. We aim for fast service while ensuring your food arrives hot and fresh!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="cancel order refund change order modify">
+        <div class="faq-question">
+          <span class="faq-icon">❌</span>
+          <h3>Can I cancel or modify my order?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, but timing matters: Before restaurant accepts (1-2 mins): Full cancellation available with instant refund. After restaurant starts preparing: Contact support immediately - we'll try to modify if possible. Order already out for delivery: Cancellation not available, but you can refuse delivery for valid reasons (wrong items, quality issues). Refunds process within 3-5 business days to your original payment method.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="schedule order advance pre-order future delivery">
+        <div class="faq-question">
+          <span class="faq-icon">📅</span>
+          <h3>Can I schedule orders in advance?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely! Schedule orders up to 7 days in advance. Perfect for busy class schedules! When placing an order, tap "Schedule for Later" and choose your preferred date and time slot. Your order will be prepared fresh and delivered at the scheduled time. Great for lunch breaks, study sessions, or late-night snacks during exam week!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="minimum order value delivery fee charges">
+        <div class="faq-question">
+          <span class="faq-icon">💰</span>
+          <h3>Is there a minimum order value?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Minimum order value varies by restaurant (typically $5-10). Delivery fee is usually $1-3 for on-campus delivery. Orders over $15 often qualify for free delivery! Check the restaurant page for specific details. Pro tip: Use group ordering feature to split costs with friends and meet minimums easily!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="wrong order missing items incorrect food delivered">
+        <div class="faq-question">
+          <span class="faq-icon">🔄</span>
+          <h3>What if my order is wrong or incomplete?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>We apologize for any issues! If you receive the wrong order or missing items: 1) Don't start eating - take photos of what you received, 2) Open the app and tap "Help" button on your order, 3) Select "Wrong/Missing Items" and upload photos, 4) Our support team responds within 5 minutes, 5) We'll either send missing items or issue a full refund. Your satisfaction is our priority!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENTS FAQ -->
+<section class="faq-section" id="payments">
+  <div class="faq-container">
+    <span class="section-tag">💳 Payments & Refunds</span>
+    <h2 class="section-heading">Payment Methods and Billing Help</h2>
+    
+    <div class="faq-grid">
+      <div class="faq-item" data-search-content="payment methods card wallet cash pay how">
+        <div class="faq-question">
+          <span class="faq-icon">💰</span>
+          <h3>What payment methods are accepted?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>We accept multiple payment options: Credit/Debit Cards (Visa, Mastercard, American Express), Campus Meal Plans & Wallet Credits, Digital Wallets (Apple Pay, Google Pay, PayPal), UPI Payments (for supported regions), Cash on Delivery (available for select orders), and Gift Cards & Promo Codes. All online payments are secured with 256-bit encryption. Choose your preferred method at checkout!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="refund policy money back cancel return">
+        <div class="faq-question">
+          <span class="faq-icon">🔙</span>
+          <h3>What is your refund policy?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Refunds are processed for: Order cancelled before preparation (100% refund), wrong items delivered (full or partial refund), food quality issues with photo proof (full refund), excessive delivery delay (compensation or refund), restaurant cancellation (automatic full refund). Refunds typically take 3-5 business days to reflect in your account. For immediate credit, we can add to your CanteenGo wallet for your next order!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="promo code discount coupon offer apply">
+        <div class="faq-question">
+          <span class="faq-icon">🎟️</span>
+          <h3>How do I use promo codes?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Applying promo codes is easy: Add items to cart and proceed to checkout, look for "Apply Promo Code" field, enter your code and tap "Apply", discount will be automatically calculated, complete your order. Check "Offers" section in the app for active deals! New users get FIRST20 for 20% off. Follow us on social media for exclusive codes!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="receipt invoice bill tax gst download">
+        <div class="faq-question">
+          <span class="faq-icon">🧾</span>
+          <h3>Can I get a receipt for my order?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! Digital receipts are automatically generated for every order. To access: Go to "My Orders" → Select completed order → Tap "View Receipt" → Download as PDF or email to yourself. Receipts include item-wise breakdown, taxes & fees, payment method used, date & time, and order ID for reference. Perfect for expense tracking or reimbursements!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCOUNT SETTINGS FAQ -->
+<section class="faq-section" id="account">
+  <div class="faq-container">
+    <span class="section-tag">👤 Account Settings</span>
+    <h2 class="section-heading">Manage Your Profile and Preferences</h2>
+    
+    <div class="faq-grid">
+      <div class="faq-item" data-search-content="change password reset forgot login security">
+        <div class="faq-question">
+          <span class="faq-icon">🔐</span>
+          <h3>How do I change my password?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>To change password: Tap "Profile" → "Settings" → "Security" → "Change Password". Enter current password, then new password twice. If you forgot your password: Tap "Forgot Password" on login screen → Enter registered email/phone → Receive OTP code → Create new password. For security, use a strong password with letters, numbers, and symbols!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="update profile information email phone address edit">
+        <div class="faq-question">
+          <span class="faq-icon">✏️</span>
+          <h3>How do I update my profile information?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Update your details anytime: Go to "Profile" → Tap "Edit Profile" → Modify name, email, phone, or profile picture → Save changes. To add/edit delivery addresses: "Profile" → "Saved Addresses" → Add New or Edit existing. You can save multiple addresses (dorm, class buildings, library) for quick selection during checkout!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="delete account remove close deactivate">
+        <div class="faq-question">
+          <span class="faq-icon">🗑️</span>
+          <h3>Can I delete my account?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>We're sorry to see you go! To delete: Go to "Profile" → "Settings" → "Account" → "Delete Account" → Confirm deletion. Important: Account deletion is permanent and cannot be undone. All order history, saved addresses, and loyalty points will be lost. Active orders must be completed first. Consider temporarily deactivating instead if you might return!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="notifications alerts push email settings preferences">
+        <div class="faq-question">
+          <span class="faq-icon">🔔</span>
+          <h3>How do I manage notifications?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Customize your notification preferences: "Profile" → "Settings" → "Notifications". Choose what you want to receive: Order updates (recommended to keep ON), promotional offers, new restaurant openings, delivery partner location updates, payment confirmations, loyalty rewards alerts. You can enable push notifications, email notifications, or SMS alerts individually. Never miss important order updates!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL SUPPORT FAQ -->
+<section class="faq-section" id="technical">
+  <div class="faq-container">
+    <span class="section-tag">🔧 Technical Support</span>
+    <h2 class="section-heading">App Issues and Technical Help</h2>
+    
+    <div class="faq-grid">
+      <div class="faq-item" data-search-content="app not working crash freeze loading error bug">
+        <div class="faq-question">
+          <span class="faq-icon">⚠️</span>
+          <h3>The app is not working properly. What should I do?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Try these quick fixes: 1) Close and restart the app, 2) Check your internet connection (WiFi or mobile data), 3) Clear app cache: Settings → Apps → CanteenGo → Clear Cache, 4) Update to latest version from app store, 5) Restart your phone, 6) Uninstall and reinstall app (your account data is saved). Still not working? Contact support with your device model and issue description for personalized help!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="payment failed transaction declined error checkout">
+        <div class="faq-question">
+          <span class="faq-icon">❗</span>
+          <h3>My payment failed. What went wrong?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Common payment failure reasons: Insufficient balance in account, incorrect card details or expired card, bank blocking online transactions (enable e-commerce), network interruption during payment, daily transaction limit reached, or 3D Secure authentication timeout. If money was deducted but order failed, don't worry - it will be auto-refunded within 5-7 days. Contact support with transaction ID for faster resolution!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="gps location not working tracking map wrong address">
+        <div class="faq-question">
+          <span class="faq-icon">📍</span>
+          <h3>Location/GPS not working correctly?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Fix location issues: Enable Location Services: Phone Settings → Location → ON, Grant app permission: Settings → Apps → CanteenGo → Permissions → Location → Always Allow, ensure GPS is set to "High Accuracy" mode, move to an open area if indoors (GPS works best outdoors), or manually enter your delivery address if GPS fails. You can save multiple addresses to avoid repeated GPS usage!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="slow app laggy performance speed optimize">
+        <div class="faq-question">
+          <span class="faq-icon">🐌</span>
+          <h3>Why is the app running slow?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Speed up your app: Clear cache regularly (Settings → Storage → Clear Cache), close background apps consuming RAM, ensure stable internet (try WiFi over mobile data), update to latest app version (optimizations included), free up phone storage (app needs 50MB+ free space), or restart your device. If still slow, check if your device meets minimum requirements (Android 7.0+ / iOS 12.0+).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY & QUALITY FAQ -->
+<section class="faq-section" id="safety">
+  <div class="faq-container">
+    <span class="section-tag">🛡️ Safety & Quality</span>
+    <h2 class="section-heading">Food Safety and Quality Standards</h2>
+    
+    <div class="faq-grid">
+      <div class="faq-item" data-search-content="food safety hygiene standards quality health">
+        <div class="faq-question">
+          <span class="faq-icon">🛡️</span>
+          <h3>How do you ensure food safety?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Food safety is our top priority: All partner restaurants undergo strict hygiene audits, regular kitchen inspections by certified food safety officers, temperature-controlled delivery bags to maintain food freshness, contactless delivery options available, packaging sealed at restaurant (tampering evident), delivery partners follow hygiene protocols (masks, sanitization), and real-time quality monitoring system. We comply with all local health department regulations!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="allergies dietary restrictions vegan vegetarian gluten">
+        <div class="faq-question">
+          <span class="faq-icon">🥗</span>
+          <h3>Can I filter for dietary restrictions?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! We support comprehensive dietary filters: Vegetarian, Vegan, Gluten-Free, Dairy-Free, Nut-Free, Halal, Kosher, and Low-Carb options. Set preferences in "Profile" → "Dietary Preferences" for personalized recommendations. Each menu item shows ingredients and allergen information. However, always verify with restaurant for severe allergies as cross-contamination may occur in kitchens.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="food quality bad taste complaint issue report">
+        <div class="faq-question">
+          <span class="faq-icon">😞</span>
+          <h3>What if I'm not satisfied with food quality?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>We value your feedback! If food quality is below expectations: Take photos of the issue, open your order and tap "Report Issue", select "Food Quality Problem" (taste, temperature, freshness, etc.), describe the issue and upload photos, and our support team will review within 10 minutes. You'll receive appropriate compensation (refund, credits, or replacement). We share feedback with restaurants to maintain high standards!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-search-content="contactless delivery covid safe no contact">
+        <div class="faq-question">
+          <span class="faq-icon">🚪</span>
+          <h3>Do you offer contactless delivery?</h3>
+          <button class="faq-toggle">+</button>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! Contactless delivery is available for all orders. How it works: Select "Contactless Delivery" at checkout, add specific drop-off instructions (door number, landmark), delivery partner will place order at your specified location, you'll receive notification when order is delivered, and pick up your order safely. Payment must be online for contactless delivery. This option ensures everyone's safety while maintaining convenience!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA SECTION -->
+<section class="help-cta-section">
+  <div class="help-cta-container">
+    <div class="cta-content">
+      <span class="cta-badge">💬 Still Need Help?</span>
+      <h2>Can't Find Your Answer?</h2>
+      <p>Our support team is here 24/7 to help you with any questions or issues</p>
+      <div class="cta-stats">
+        <div class="stat-item">
+          <span class="stat-number">< 2 min</span>
+          <span class="stat-label">Avg Response Time</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Satisfaction Rate</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Support Available</span>
+        </div>
+      </div>
+      <div class="cta-buttons">
+        <button class="cta-btn primary">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 3H3C1.89543 3 1 3.89543 1 5V15C1 16.1046 1.89543 17 3 17H17C18.1046 17 19 16.1046 19 15V5C19 3.89543 18.1046 3 17 3Z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 7L10 11L15 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          Start Live Chat
+        </button>
+        <a href="16message.html" class="cta-btn secondary">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2H2C1.44772 2 1 2.44772 1 3V14C1 14.5523 1.44772 15 2 15H7L10 18L13 15H18C18.5523 15 19 14.5523 19 14V3C19 2.44772 18.5523 2 18 2Z" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          Contact Us
+        </a>
+      </div>
+    </div>
+    <div class="cta-illustration">
+      <div class="floating-chat">💬</div>
+      <div class="floating-chat">🎧</div>
+      <div class="floating-chat">📞</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MODERN FOOTER ================= -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-brand" onclick="location.reload()" style="cursor: pointer;">
+            <h2>🍴 CanteenGo</h2>
+            <p>Your Campus Food Partner. Fast. Fresh. Reliable.</p>
+        </div>
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="11about.html">About Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#" onclick="alert('Join our team! Send your resume to careers@canteengo.com'); return false;">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="17question.html">Help Center</a></li>
+                    <li><a href="16message.html">Contact</a></li>
+                    <li><a href="16message.html">Report Issue</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Account</h4>
+                <ul>
+                    <li><a href="#" onclick="openLoginModal(); return false;">Login</a></li>
+                    <li><a href="#" onclick="alert('Profile feature coming soon! Currently in development.'); return false;">Profile</a></li>
+                    <li><a href="#" onclick="openCart(); return false;">Orders</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 CanteenGo. All Rights Reserved. | Designed by CanteenGo</p>
+    </div>
+</footer>
+
+<script>
+// FAQ Toggle Functionality
+document.querySelectorAll('.faq-item').forEach(item => {
+  const question = item.querySelector('.faq-question');
+  const toggle = item.querySelector('.faq-toggle');
+  
+  question.addEventListener('click', () => {
+    const isOpen = item.classList.contains('active');
+    
+    // Close all FAQ items
+    document.querySelectorAll('.faq-item').forEach(faq => {
+      faq.classList.remove('active');
+      faq.querySelector('.faq-toggle').textContent = '+';
+    });
+    
+    // Open clicked item if it wasn't open
+    if (!isOpen) {
+      item.classList.add('active');
+      toggle.textContent = '−';
+    }
+  });
+});
+
+// Search Functionality
+const searchInput = document.getElementById('helpSearch');
+const clearBtn = document.getElementById('clearSearch');
+const faqItems = document.querySelectorAll('.faq-item');
+
+searchInput.addEventListener('input', (e) => {
+  const searchTerm = e.target.value.toLowerCase().trim();
+  
+  // Show/hide clear button
+  clearBtn.style.display = searchTerm ? 'block' : 'none';
+  
+  if (!searchTerm) {
+    // Show all FAQ items
+    faqItems.forEach(item => {
+      item.style.display = 'block';
+      item.classList.remove('highlight');
+    });
+    return;
+  }
+  
+  // Filter FAQ items
+  let matchCount = 0;
+  faqItems.forEach(item => {
+    const searchContent = item.getAttribute('data-search-content') || '';
+    const questionText = item.querySelector('h3').textContent.toLowerCase();
+    const answerText = item.querySelector('.faq-answer p').textContent.toLowerCase();
+    
+    const matches = searchContent.includes(searchTerm) || 
+                   questionText.includes(searchTerm) || 
+                   answerText.includes(searchTerm);
+    
+    if (matches) {
+      item.style.display = 'block';
+      item.classList.add('highlight');
+      matchCount++;
+    } else {
+      item.style.display = 'none';
+      item.classList.remove('highlight');
+    }
+  });
+  
+  // Show no results message if needed
+  console.log(`Found ${matchCount} results for "${searchTerm}"`);
+});
+
+// Clear search
+clearBtn.addEventListener('click', () => {
+  searchInput.value = '';
+  clearBtn.style.display = 'none';
+  faqItems.forEach(item => {
+    item.style.display = 'block';
+    item.classList.remove('highlight');
+  });
+  searchInput.focus();
+});
+
+// Popular search tags
+document.querySelectorAll('.search-tag').forEach(tag => {
+  tag.addEventListener('click', () => {
+    const query = tag.getAttribute('data-query');
+    searchInput.value = query;
+    searchInput.dispatchEvent(new Event('input'));
+  });
+});
+
+// Smooth scroll for topic cards
+document.querySelectorAll('.topic-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = card.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Mobile menu toggle
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    navToggle.classList.toggle('active');
+  });
+}
+
+// ================= SEARCH FUNCTIONALITY =================
+// Complete searchable items database
+const searchableItems = [
+    // Popular Dishes
+    {name: 'Cheese Burger', price: 180, category: 'Burger', page: 'Home', type: 'dish'},
+    {name: 'Margherita Pizza', price: 550, category: 'Pizza', page: 'Home', type: 'dish'},
+    {name: 'Chicken Momo', price: 150, category: 'Momo', page: 'Home', type: 'dish'},
+    {name: 'Grilled Sandwich', price: 120, category: 'Sandwich', page: 'Home', type: 'dish'},
+    {name: 'Veg Chowmein', price: 140, category: 'Noodles', page: 'Home', type: 'dish'},
+    {name: 'French Fries', price: 100, category: 'Sides', page: 'Home', type: 'dish'},
+    
+    // Combos
+    {name: 'Combo 1 - Main + Side + Beverage', price: 2999, category: 'Combo', page: 'Menu', type: 'combo'},
+    {name: 'Combo 2 - Family Pack', price: 3999, category: 'Combo', page: 'Menu', type: 'combo'},
+    {name: 'Combo 3 - Student Special', price: 4999, category: 'Combo', page: 'Menu', type: 'combo'},
+    
+    // Chef Picks
+    {name: 'Creamy Alfredo Pasta', price: 349, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Grilled Chicken Breast', price: 399, category: 'Healthy', page: 'Menu', type: 'dish'},
+    {name: 'Tandoori Paneer Tikka', price: 299, category: 'Indian', page: 'Menu', type: 'dish'},
+    {name: 'Chocolate Lava Cake', price: 499, category: 'Dessert', page: 'Menu', type: 'dish'},
+    
+    // Italian
+    {name: 'Margherita Pizza', price: 550, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Pepperoni Pizza', price: 650, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Vegetarian Pizza', price: 600, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Carbonara Pasta', price: 450, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Creamy Alfredo Pasta', price: 349, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Bolognese Pasta', price: 480, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Penne Arrabbiata', price: 420, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Lasagna', price: 520, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Garlic Bread', price: 150, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Bruschetta', price: 180, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Tiramisu', price: 250, category: 'Italian', page: 'Menu', type: 'dish'},
+    {name: 'Panna Cotta', price: 220, category: 'Italian', page: 'Menu', type: 'dish'},
+    
+    // Asian
+    {name: 'Chicken Fried Rice', price: 280, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Veg Fried Rice', price: 240, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Hakka Noodles', price: 260, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Chowmein', price: 250, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Spring Rolls', price: 180, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Momo', price: 150, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Veg Momo', price: 130, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Buff Momo', price: 160, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Fried Momo', price: 170, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Jhol Momo', price: 180, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Thukpa', price: 220, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Veg Thukpa', price: 200, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Chilli Chicken', price: 320, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Manchurian', price: 280, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Sweet & Sour Chicken', price: 340, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Pad Thai', price: 380, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Tom Yum Soup', price: 250, category: 'Asian', page: 'Menu', type: 'dish'},
+    {name: 'Sushi Platter', price: 650, category: 'Asian', page: 'Menu', type: 'dish'},
+    
+    // Fast Food
+    {name: 'Classic Burger', price: 180, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Cheese Burger', price: 220, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Burger', price: 250, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Veg Burger', price: 160, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Double Patty Burger', price: 320, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'French Fries', price: 100, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Loaded Fries', price: 180, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Wings', price: 280, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Nuggets', price: 220, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Hot Dog', price: 150, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Grilled Sandwich', price: 120, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Club Sandwich', price: 200, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Chicken Wrap', price: 180, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Veg Wrap', price: 150, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    {name: 'Onion Rings', price: 120, category: 'Fast Food', page: 'Menu', type: 'dish'},
+    
+    // Restaurants
+    {name: 'Samaya Rooftop Garden', cuisine: 'Nepali', rating: '4.9', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Walnut Bistro', cuisine: 'Indian', rating: '4.8', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Nepalaya Rooftop', cuisine: 'Chinese', rating: '4.7', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Sicily By Ts', cuisine: 'Italian', rating: '4.6', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Fresh Bowl Kitchen', cuisine: 'Healthy', rating: '4.8', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Burger Junction', cuisine: 'Fast Food', rating: '4.5', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Sweet Paradise', cuisine: 'Desserts', rating: '4.9', page: 'Restaurants', type: 'restaurant'}
+];
+
+// Open search modal
+function openSearch() {
+    document.getElementById('searchModal').style.display = 'flex';
+    setTimeout(() => {
+        document.getElementById('searchInput').focus();
+    }, 100);
+}
+
+// Close search modal
+function closeSearch() {
+    document.getElementById('searchModal').style.display = 'none';
+    document.getElementById('searchInput').value = '';
+    document.getElementById('searchResults').innerHTML = '<p style="text-align: center; color: #666;">Start typing to search...</p>';
+}
+
+// Perform search
+function performSearch() {
+    const query = document.getElementById('searchInput').value.toLowerCase().trim();
+    const resultsContainer = document.getElementById('searchResults');
+    
+    if (query === '') {
+        resultsContainer.innerHTML = '<p style="text-align: center; color: #666;">Start typing to search...</p>';
+        return;
+    }
+    
+    // Filter items based on search query
+    const results = searchableItems.filter(item => 
+        item.name.toLowerCase().includes(query) || 
+        (item.category && item.category.toLowerCase().includes(query)) ||
+        (item.cuisine && item.cuisine.toLowerCase().includes(query))
+    );
+    
+    if (results.length === 0) {
+        resultsContainer.innerHTML = '<p style="text-align: center; color: #666;">No results found for "' + query + '"</p>';
+        return;
+    }
+    
+    // Display results
+    let html = '<div style="display: grid; gap: 15px;">';
+    
+    results.forEach(item => {
+        if (item.type === 'restaurant') {
+            html += `
+                <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; display: flex; justify-content: space-between; align-items: center; background: #f9f9f9;">
+                    <div>
+                        <h3 style="margin: 0 0 5px 0; font-size: 16px;">${item.name}</h3>
+                        <p style="margin: 0; color: #666; font-size: 14px;">${item.cuisine} • ⭐ ${item.rating} • ${item.page}</p>
+                    </div>
+                    <button onclick='window.location.href="8restaurants.html"' style="padding: 8px 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; cursor: pointer;">View</button>
+                </div>
+            `;
+        } else {
+            html += `
+                <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h3 style="margin: 0 0 5px 0; font-size: 16px;">${item.name}</h3>
+                        <p style="margin: 0; color: #666; font-size: 14px;">${item.category} • Rs. ${item.price} • ${item.page}</p>
+                    </div>
+                    <button onclick='showAddedToast()' style="padding: 8px 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; cursor: pointer;">Add to Cart</button>
+                </div>
+            `;
+        }
+    });
+    
+    html += '</div>';
+    resultsContainer.innerHTML = html;
+}
+
+// Show toast notification when item added
+function showAddedToast() {
+    const toast = document.createElement('div');
+    toast.innerText = '✓ Added to cart!';
+    toast.style.cssText = 'position: fixed; bottom: 30px; right: 30px; background: #10b981; color: white; padding: 15px 25px; border-radius: 8px; font-weight: 600; z-index: 10000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);';
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.remove();
+    }, 2000);
+}
+
+// Close when clicking outside any modal
+window.onclick = function(e) {
+    ['searchModal', 'restaurantSelectorModal', 'restaurantMenuModal', 'loginModal'].forEach(id => {
+        const m = document.getElementById(id);
+        if (m && e.target === m) m.style.display = 'none';
+    });
+}
+
+// ================= RESTAURANT SELECTOR & MENU =================
+// Open restaurant selector modal
+function openRestaurantSelector() {
+    document.getElementById('restaurantSelectorModal').style.display = 'flex';
+}
+
+// Close restaurant selector modal
+function closeRestaurantSelector() {
+    document.getElementById('restaurantSelectorModal').style.display = 'none';
+}
+
+// Restaurant menu data
+const restaurantMenus = {
+    'Nepali': [
+        {name: 'Dal Bhat Set', price: 250, category: 'Main Course'},
+        {name: 'Chicken Momo (10 pcs)', price: 150, category: 'Appetizer'},
+        {name: 'Veg Momo (10 pcs)', price: 130, category: 'Appetizer'},
+        {name: 'Thakali Thali', price: 350, category: 'Main Course'},
+        {name: 'Newari Khaja Set', price: 400, category: 'Specialty'},
+        {name: 'Chatamari', price: 120, category: 'Snacks'},
+        {name: 'Sel Roti (5 pcs)', price: 100, category: 'Snacks'},
+        {name: 'Yomari (3 pcs)', price: 150, category: 'Dessert'},
+        {name: 'Gundruk Soup', price: 100, category: 'Soup'},
+        {name: 'Aloo Tama', price: 180, category: 'Side Dish'}
+    ],
+    'Indian': [
+        {name: 'Butter Chicken', price: 380, category: 'Main Course'},
+        {name: 'Chicken Biryani', price: 320, category: 'Rice'},
+        {name: 'Paneer Tikka Masala', price: 280, category: 'Main Course'},
+        {name: 'Garlic Naan', price: 50, category: 'Bread'},
+        {name: 'Tandoori Chicken', price: 350, category: 'Tandoori'},
+        {name: 'Palak Paneer', price: 250, category: 'Vegetarian'},
+        {name: 'Chicken Tikka', price: 320, category: 'Tandoori'},
+        {name: 'Masala Dosa', price: 180, category: 'South Indian'},
+        {name: 'Samosa (2 pcs)', price: 60, category: 'Snacks'},
+        {name: 'Gulab Jamun', price: 100, category: 'Dessert'}
+    ],
+    'Chinese': [
+        {name: 'Chicken Fried Rice', price: 280, category: 'Rice'},
+        {name: 'Veg Chowmein', price: 220, category: 'Noodles'},
+        {name: 'Chicken Chowmein', price: 250, category: 'Noodles'},
+        {name: 'Spring Rolls (6 pcs)', price: 180, category: 'Appetizer'},
+        {name: 'Sweet & Sour Chicken', price: 340, category: 'Main Course'},
+        {name: 'Manchurian', price: 280, category: 'Main Course'},
+        {name: 'Hakka Noodles', price: 260, category: 'Noodles'},
+        {name: 'Fried Momo (10 pcs)', price: 170, category: 'Appetizer'},
+        {name: 'Hot & Sour Soup', price: 150, category: 'Soup'},
+        {name: 'Kung Pao Chicken', price: 360, category: 'Main Course'}
+    ],
+    'Italian': [
+        {name: 'Margherita Pizza', price: 550, category: 'Pizza'},
+        {name: 'Pepperoni Pizza', price: 650, category: 'Pizza'},
+        {name: 'Carbonara Pasta', price: 450, category: 'Pasta'},
+        {name: 'Alfredo Pasta', price: 420, category: 'Pasta'},
+        {name: 'Lasagna', price: 520, category: 'Baked'},
+        {name: 'Garlic Bread', price: 150, category: 'Sides'},
+        {name: 'Bruschetta', price: 180, category: 'Appetizer'},
+        {name: 'Ravioli', price: 480, category: 'Pasta'},
+        {name: 'Tiramisu', price: 250, category: 'Dessert'},
+        {name: 'Panna Cotta', price: 220, category: 'Dessert'}
+    ],
+    'Healthy': [
+        {name: 'Green Goddess Bowl', price: 380, category: 'Bowls'},
+        {name: 'Mediterranean Bowl', price: 389, category: 'Bowls'},
+        {name: 'Quinoa Power Bowl', price: 420, category: 'Bowls'},
+        {name: 'Greek Salad', price: 280, category: 'Salads'},
+        {name: 'Caesar Salad', price: 260, category: 'Salads'},
+        {name: 'Avocado Toast', price: 250, category: 'Toast'},
+        {name: 'Smoothie Bowl', price: 320, category: 'Bowls'},
+        {name: 'Fruit Salad', price: 200, category: 'Salads'},
+        {name: 'Green Smoothie', price: 180, category: 'Drinks'},
+        {name: 'Protein Bowl', price: 450, category: 'Bowls'}
+    ],
+    'Fast Food': [
+        {name: 'Classic Burger', price: 180, category: 'Burgers'},
+        {name: 'Cheese Burger', price: 220, category: 'Burgers'},
+        {name: 'Chicken Burger', price: 250, category: 'Burgers'},
+        {name: 'French Fries', price: 100, category: 'Sides'},
+        {name: 'Loaded Fries', price: 180, category: 'Sides'},
+        {name: 'Chicken Wings (8 pcs)', price: 280, category: 'Snacks'},
+        {name: 'Chicken Nuggets (10 pcs)', price: 220, category: 'Snacks'},
+        {name: 'Hot Dog', price: 150, category: 'Snacks'},
+        {name: 'Onion Rings', price: 120, category: 'Sides'},
+        {name: 'Milkshake', price: 180, category: 'Drinks'}
+    ],
+    'Desserts': [
+        {name: 'Red Velvet Cake', price: 200, category: 'Cakes'},
+        {name: 'Chocolate Cake', price: 180, category: 'Cakes'},
+        {name: 'Cheesecake', price: 250, category: 'Cakes'},
+        {name: 'Vanilla Ice Cream', price: 120, category: 'Ice Cream'},
+        {name: 'Chocolate Ice Cream', price: 120, category: 'Ice Cream'},
+        {name: 'Brownie Sundae', price: 220, category: 'Special'},
+        {name: 'Tiramisu', price: 250, category: 'Italian'},
+        {name: 'Donut (3 pcs)', price: 150, category: 'Pastries'},
+        {name: 'Chocolate Mousse', price: 180, category: 'Special'},
+        {name: 'Apple Pie', price: 200, category: 'Pies'},
+        {name: 'Cupcake (2 pcs)', price: 140, category: 'Cakes'},
+        {name: 'Waffle with Ice Cream', price: 280, category: 'Special'}
+    ]
+};
+
+// Open restaurant menu modal
+function openRestaurantMenuModal(restaurantName, cuisine) {
+    // Close selector modal
+    closeRestaurantSelector();
+    
+    // Set restaurant info
+    document.getElementById('restaurant-name').innerText = restaurantName;
+    document.getElementById('restaurant-cuisine').innerText = cuisine + ' Cuisine';
+    
+    // Get menu items for this cuisine
+    const menuItems = restaurantMenus[cuisine] || [];
+    
+    // Group items by category
+    const categories = {};
+    menuItems.forEach(item => {
+        if (!categories[item.category]) {
+            categories[item.category] = [];
+        }
+        categories[item.category].push(item);
+    });
+    
+    // Build menu HTML
+    let menuHTML = '';
+    for (const [category, items] of Object.entries(categories)) {
+        menuHTML += `
+            <div style="margin-bottom: 30px;">
+                <h3 style="padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #667eea; margin-bottom: 15px;">${category}</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px;">
+        `;
+        
+        items.forEach(item => {
+            menuHTML += `
+                <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fff; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
+                    <h4 style="margin: 0 0 8px 0; font-size: 16px; color: #333;">${item.name}</h4>
+                    <p style="margin: 0 0 12px 0; font-size: 18px; font-weight: bold; color: #667eea;">Rs. ${item.price}</p>
+                    <button onclick="addToCart('${item.name}', ${item.price}); showAddedToast()" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Add to Cart</button>
+                </div>
+            `;
+        });
+        
+        menuHTML += `</div></div>`;
+    }
+    
+    document.getElementById('restaurant-menu-items').innerHTML = menuHTML;
+    document.getElementById('restaurantMenuModal').style.display = 'flex';
+}
+
+// Close restaurant menu modal
+function closeRestaurantMenuModal() {
+    document.getElementById('restaurantMenuModal').style.display = 'none';
+}
+
+// ================= LOGIN MODAL =================
+function openLoginModal() {
+    document.getElementById('loginModal').style.display = 'flex';
+}
+
+function closeLoginModal() {
+    document.getElementById('loginModal').style.display = 'none';
+    document.getElementById('login-username').value = '';
+    document.getElementById('login-password').value = '';
+}
+
+function handleLogin(e) {
+    e.preventDefault();
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+    
+    if (username && password) {
+        alert('Login successful! Welcome to CanteenGo, ' + username + '!');
+        closeLoginModal();
+    } else {
+        alert('Please enter both username and password.');
+    }
+    return false;
+}
+
+// Connect search button
+document.addEventListener('DOMContentLoaded', function() {
+    const searchBtn = document.getElementById('searchBtn');
+    if (searchBtn) {
+        searchBtn.addEventListener('click', openSearch);
+    }
+});
+</script>
+
+<!-- ================= LOGIN MODAL ================= -->
+<div id="loginModal" class="modal">
+    <div class="modal-content" style="max-width: 450px;">
+        <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+        <h2 style="text-align: center; margin-bottom: 20px;">Login to CanteenGo</h2>
+        
+        <form onsubmit="return handleLogin(event)" style="display: flex; flex-direction: column; gap: 15px;">
+            <div>
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Email or Username</label>
+                <input type="text" id="login-username" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
+            </div>
+            
+            <div>
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Password</label>
+                <input type="password" id="login-password" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                    <input type="checkbox" style="cursor: pointer;">
+                    <span style="font-size: 14px;">Remember me</span>
+                </label>
+                <a href="#" onclick="alert('Please contact support at pratapaitwaldivyansh@gmail.com to reset your password.'); return false;" style="font-size: 14px; color: #667eea; text-decoration: none;">Forgot Password?</a>
+            </div>
+            
+            <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; margin-top: 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 16px;">Login</button>
+            
+            <p style="text-align: center; margin-top: 15px; font-size: 14px; color: #666;">
+                Don't have an account? 
+                <a href="#" onclick="alert('Registration feature coming soon!'); return false;" style="color: #667eea; text-decoration: none; font-weight: 600;">Sign Up</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+<!-- ================= RESTAURANT SELECTOR MODAL ================= -->
+<div id="restaurantSelectorModal" class="modal">
+    <div class="modal-content" style="max-width: 900px;">
+        <span class="close-btn" onclick="closeRestaurantSelector()">&times;</span>
+        <h2 style="text-align: center; margin-bottom: 10px;">Choose Your Restaurant</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 25px;">Select a restaurant to view their menu and start ordering</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <!-- Restaurant Cards -->
+            <div onclick="openRestaurantMenuModal('Samaya Rooftop Garden', 'Nepali')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🏔️</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Samaya Rooftop Garden</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Nepali Cuisine • ⭐ 4.9</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Dal Bhat, Momo, Thakali Thali</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Walnut Bistro', 'Indian')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍛</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Walnut Bistro</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Indian Cuisine • ⭐ 4.8</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Butter Chicken, Biryani, Naan</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Nepalaya Rooftop', 'Chinese')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🥡</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Nepalaya Rooftop</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Chinese Cuisine • ⭐ 4.7</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Chowmein, Fried Rice, Dumplings</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Sicily By Ts', 'Italian')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍕</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Sicily By Ts</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Italian Cuisine • ⭐ 4.6</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Pizza, Pasta, Risotto</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Fresh Bowl Kitchen', 'Healthy')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🥗</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Fresh Bowl Kitchen</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Healthy Cuisine • ⭐ 4.8</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Salads, Smoothie Bowls, Wraps</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Burger Junction', 'Fast Food')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍔</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Burger Junction</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Fast Food • ⭐ 4.5</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Burgers, Fries, Wings</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Sweet Paradise', 'Desserts')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍰</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Sweet Paradise</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Desserts • ⭐ 4.9</p>
+                <p style="margin: 10px 0 0 0; color: #888; text-align: center; font-size: 12px;">Cakes, Ice Cream, Pastries</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= RESTAURANT MENU MODAL ================= -->
+<div id="restaurantMenuModal" class="modal">
+    <div class="modal-content" style="max-width: 1000px; max-height: 90vh; overflow-y: auto;">
+        <span class="close-btn" onclick="closeRestaurantMenuModal()">&times;</span>
+        <h2 id="restaurant-name" style="text-align: center; margin-bottom: 5px;"></h2>
+        <p id="restaurant-cuisine" style="text-align: center; color: #666; margin-bottom: 25px;"></p>
+        
+        <div id="restaurant-menu-items">
+            <!-- Menu items will be populated here -->
+        </div>
+    </div>
+</div>
+
+<!-- ================= SEARCH MODAL ================= -->
+<div id="searchModal" class="modal">
+    <div class="modal-content" style="max-width: 700px;">
+        <span class="close-btn" onclick="closeSearch()">&times;</span>
+        <h2>Search Menu</h2>
+        
+        <input type="text" id="searchInput" placeholder="Search for dishes, restaurants, combos..." 
+               style="width: 100%; padding: 12px; margin: 15px 0; font-size: 16px; border: 2px solid #ddd; border-radius: 8px;" 
+               oninput="performSearch()" autofocus>
+        
+        <div id="searchResults" style="max-height: 400px; overflow-y: auto; margin-top: 20px;">
+            <p style="text-align: center; color: #666;">Start typing to search...</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

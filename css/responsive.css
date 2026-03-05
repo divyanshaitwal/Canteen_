@@ -1,0 +1,187 @@
+/* ================= ENHANCED RESPONSIVE STYLES ================= */
+/* Improved responsive stylesheet */
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+html, body { 
+    height: 100%; 
+    font-family: 'Inter', Arial, Helvetica, sans-serif; 
+    color: #1a1a2e;
+    scroll-behavior: smooth;
+}
+
+img { 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+a { 
+    color: inherit; 
+    text-decoration: none; 
+}
+
+/* Loading State */
+body.loading {
+    opacity: 0;
+}
+
+body.loaded {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Sections */
+section { 
+    padding: 60px 24px;
+}
+
+.section-breaker { 
+    background: #f9fafb; 
+}
+
+/* Navbar Scrolled State */
+.navbar.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid Helpers */
+.dishes-container, 
+.restaurant-grid, 
+.dish-grid, 
+.testimonial-grid { 
+    display: grid; 
+    gap: 24px; 
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+}
+
+/* Modal Enhancement */
+.modal { 
+    display: none; 
+    position: fixed; 
+    inset: 0; 
+    align-items: center; 
+    justify-content: center; 
+    background: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    padding: 20px;
+}
+
+/* Forms Enhancement */
+input[type=text], 
+input[type=email], 
+input[type=password], 
+input[type=search], 
+textarea { 
+    width: 100%; 
+    padding: 12px 16px; 
+    border: 2px solid #e5e7eb; 
+    border-radius: 12px; 
+    margin: 8px 0 12px;
+    font-family: inherit;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+label { 
+    display: block; 
+    margin-top: 12px; 
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+/* Utilities */
+.subtitle { 
+    color: #6b7280; 
+}
+
+.highlight { 
+    background: linear-gradient(120deg, #f093fb 0%, #667eea 100%);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 6px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #f093fb 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Selection */
+::selection {
+    background: #667eea;
+    color: white;
+}
+
+/* Accessibility */
+a:focus, 
+button:focus, 
+input:focus { 
+    outline: 3px solid rgba(102, 126, 234, 0.4); 
+    outline-offset: 2px; 
+}
+
+/* Cart Items */
+#cart-items li { 
+    padding: 16px 0; 
+    border-bottom: 1px solid #e5e7eb; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+/* Price Styling */
+.price { 
+    color: #667eea; 
+    font-weight: 700; 
+    font-size: 18px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+    section {
+        padding: 50px 24px;
+    }
+}
+
+@media (max-width: 900px) {
+    section {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    section { 
+        padding: 32px 16px; 
+    }
+    
+    .modal-content { 
+        width: 95%; 
+        padding: 24px; 
+    }
+}

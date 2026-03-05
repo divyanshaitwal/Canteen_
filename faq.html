@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Frequently Asked Questions | CanteenGo</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/1herosec.css">
+    <link rel="stylesheet" href="css/18footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        /* ================= UNIFIED DESIGN SYSTEM ================= */
+        :root {
+            --primary-purple: #667eea;
+            --primary-pink: #764ba2;
+            --accent-pink: #f093fb;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --border-light: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        /* ================= NO ICON MOVEMENT - STABLE NAVBAR ================= */
+        .icon-btn, .icon-btn svg,
+        .cart-link, .cart-link svg,
+        .btn-order {
+            transform: none !important;
+            transition: color 0.3s ease, background-color 0.3s ease !important;
+        }
+
+        .icon-btn:hover svg,
+        .cart-link:hover svg {
+            transform: none !important;
+        }
+
+        .cart-badge {
+            animation: none !important;
+        }
+
+        /* ================= GRADIENT TEXT ================= */
+        .gradient-heading {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 50%, var(--accent-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ================= FAQ HERO SECTION ================= */
+        .faq-hero {
+            padding: 150px 20px 100px;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq-hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -300px;
+            right: -300px;
+        }
+
+        .faq-hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            bottom: -200px;
+            left: -200px;
+        }
+
+        .faq-hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .faq-hero h1 {
+            font-size: 52px;
+            color: white;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .faq-hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        .search-faq-box {
+            max-width: 600px;
+            margin: 30px auto 0;
+            position: relative;
+        }
+
+        .search-faq-box input {
+            width: 100%;
+            padding: 18px 55px 18px 20px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            outline: none;
+        }
+
+        .search-faq-box button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .search-faq-box button:hover {
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        /* ================= SECTION STYLES ================= */
+        .content-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--bg-light);
+            border: 2px solid var(--border-light);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-purple);
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ================= FAQ CATEGORY TABS ================= */
+        .faq-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .faq-tab-btn {
+            padding: 14px 32px;
+            background: white;
+            color: var(--primary-purple);
+            border: 2px solid var(--primary-purple);
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-tab-btn.active {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .faq-tab-btn:hover:not(.active) {
+            background: var(--bg-light);
+            transform: translateY(-2px);
+        }
+
+        /* ================= FAQ CONTAINER ================= */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-category {
+            display: none;
+        }
+
+        .faq-category.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .category-header h3 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .category-header p {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        /* ================= FAQ ITEMS ================= */
+        .faq-item {
+            background: var(--bg-white);
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-purple);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--text-dark);
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-purple);
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .faq-toggle {
+            font-size: 24px;
+            color: var(--primary-purple);
+            font-weight: 600;
+            transition: transform 0.3s;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            padding: 0 30px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 600px;
+            padding: 0 30px 25px;
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* ================= QUICK STATS ================= */
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary-purple);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.15);
+        }
+
+        .stat-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* ================= CTA SECTION ================= */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+            padding: 80px 20px;
+            margin: 100px 0;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 16px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            text-decoration: none;
+        }
+
+        .cta-btn-primary {
+            background: white;
+            color: var(--primary-purple);
+        }
+
+        .cta-btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-btn-secondary:hover {
+            background: white;
+            color: var(--primary-purple);
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 768px) {
+            .faq-hero h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .faq-tabs {
+                flex-direction: column;
+            }
+
+            .faq-tab-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .category-header h3 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="navbar-container">
+        <div class="logo" onclick="location.reload()" style="cursor: pointer;">
+            <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="url(#logoGradient)"/>
+                <path d="M16 8C12.6863 8 10 10.6863 10 14C10 17.3137 12.6863 20 16 20C19.3137 20 22 17.3137 22 14C22 10.6863 19.3137 8 16 8Z" fill="white"/>
+                <path d="M16 22C14.8954 22 14 22.8954 14 24C14 25.1046 14.8954 26 16 26C17.1046 26 18 25.1046 18 24C18 22.8954 17.1046 22 16 22Z" fill="white"/>
+                <defs>
+                    <linearGradient id="logoGradient" x1="0" y1="0" x2="32" y2="32">
+                        <stop offset="0%" stop-color="#667eea"/>
+                        <stop offset="50%" stop-color="#764ba2"/>
+                        <stop offset="100%" stop-color="#f093fb"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="logo-text">CanteenGo</span>
+        </div>
+
+        <nav class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+                <li><a href="1herosec.html" class="nav-link">Home</a></li>
+                <li><a href="10menu.html" class="nav-link">Menu</a></li>
+                <li><a href="8restaurants.html" class="nav-link">Restaurants</a></li>
+                <li><a href="11about.html" class="nav-link">About Us</a></li>
+                <li><a href="6customer.html" class="nav-link">Feedback</a></li>
+                <li><a href="17question.html" class="nav-link">Help Center</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
+            <button class="icon-btn" id="searchBtn" aria-label="Search" style="background: none; border: none; cursor: pointer; padding: 8px; display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                    <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18 18l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <a class="cart-link" href="#" onclick="openCart(); return false;" style="position: relative; display: flex; align-items: center; justify-content: center; text-decoration: none; color: inherit; padding: 8px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                    <path d="M1 1h3l2.68 13.39a1 1 0 0 0 1 .61h9.72a1 1 0 0 0 1-.78l1.5-7.5a1 1 0 0 0-1-.72H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8" cy="18" r="1" fill="currentColor"/>
+                    <circle cx="16" cy="18" r="1" fill="currentColor"/>
+                </svg>
+                <span class="cart-badge" id="cart-count" style="position: absolute; top: 0; right: 0; background: #e91e63; color: white; font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 10px; min-width: 18px; text-align: center;">0</span>
+            </a>
+            <button class="btn-order" onclick="openRestaurantSelector()" style="padding: 10px 24px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap;">Order Now</button>
+        </div>
+
+        <button class="hamburger" id="navToggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </div>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="faq-hero">
+    <div class="faq-hero-container">
+        <span class="section-badge">❓ Help Center</span>
+        <h1>Frequently Asked Questions</h1>
+        <p>Find quick answers about ordering, delivery, payments, and more. Browse our comprehensive FAQ organized by category.</p>
+        
+        <div class="search-faq-box">
+            <input type="text" id="faqSearchInput" placeholder="Search for answers..." oninput="searchFAQ()">
+            <button onclick="searchFAQ()">Search</button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= QUICK STATS ================= -->
+<section class="content-section" style="padding-top: 80px;">
+    <div class="quick-stats">
+        <div class="stat-card">
+            <div class="stat-icon">📚</div>
+            <div class="stat-number">100+</div>
+            <div class="stat-label">FAQ Articles</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Support Available</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">😊</div>
+            <div class="stat-number">95%</div>
+            <div class="stat-label">Satisfaction Rate</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🚀</div>
+            <div class="stat-number">&lt;2min</div>
+            <div class="stat-label">Avg Response Time</div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FAQ SECTION ================= -->
+<section class="content-section" style="padding-top: 0;">
+    <div class="section-header">
+        <span class="section-tag">📋 Browse by Category</span>
+        <h2 class="section-title gradient-heading">Choose a Topic</h2>
+        <p class="section-subtitle">Select a category below to find answers to your questions</p>
+    </div>
+
+    <!-- FAQ Category Tabs -->
+    <div class="faq-tabs">
+        <button class="faq-tab-btn active" onclick="showFaqCategory('payment')">
+            <span>💳</span> Payment
+        </button>
+        <button class="faq-tab-btn" onclick="showFaqCategory('delivery')">
+            <span>🚚</span> Delivery
+        </button>
+        <button class="faq-tab-btn" onclick="showFaqCategory('account')">
+            <span>👤</span> Account
+        </button>
+        <button class="faq-tab-btn" onclick="showFaqCategory('help')">
+            <span>💬</span> More Help
+        </button>
+    </div>
+
+    <div class="faq-container">
+        <!-- PAYMENT FAQ -->
+        <div class="faq-category active" id="faq-payment">
+            <div class="category-header">
+                <h3 class="gradient-heading">💳 Payment Information</h3>
+                <p>Information about payment methods and security</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>💰 What payment methods do you accept?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We accept multiple payment methods: <strong>Credit/Debit Cards</strong> (Visa, Mastercard, American Express), <strong>Digital Wallets</strong> (eSewa, Khalti, IME Pay), <strong>Mobile Banking</strong>, <strong>Cash on Delivery</strong>, and <strong>Campus ID Card</strong> (for registered students). All digital payments are processed securely with 256-bit encryption.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🔒 Is my payment information secure?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! We use <strong>PCI-DSS compliant</strong> payment gateways with end-to-end encryption. Your card details are never stored on our servers. We use tokenization for recurring payments and two-factor authentication for transactions over Rs. 5,000. Our security is audited quarterly by independent cybersecurity firms.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>💵 Can I split payment between multiple methods?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! You can split payments using: (1) <strong>Wallet + Card</strong>, (2) <strong>Campus ID + Cash</strong>, (3) <strong>Multiple digital wallets</strong>. Just select "Split Payment" at checkout. Example: Use Rs. 200 from eSewa wallet and pay the rest via card. Maximum 2 payment methods per order.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>⏱️ How long does payment processing take?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Instant:</strong> Digital wallets (eSewa, Khalti) - confirmed in 2-5 seconds. <strong>Cards:</strong> 10-30 seconds. <strong>Mobile Banking:</strong> 1-2 minutes. <strong>Cash on Delivery:</strong> Payment upon receiving your order. You'll receive instant confirmation via SMS and app notification once payment clears.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🎫 Do you offer student discounts or vouchers?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! <strong>Student Verified Accounts:</strong> 10% off on first 3 orders monthly. <strong>Loyalty Points:</strong> Earn 1 point per Rs. 100 spent (1 point = Rs. 1). <strong>Referral Bonus:</strong> Rs. 100 off for both you and your friend. <strong>Festival Offers:</strong> Up to 50% off during Dashain, Tihar, New Year. Check the "Offers" tab in-app for active promotions!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🔄 What's your refund policy?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Full Refund:</strong> Order cancelled before restaurant confirmation (instant). <strong>Partial Refund:</strong> Wrong/damaged items (processed within 24 hours). <strong>Store Credit:</strong> If you prefer, get 110% as wallet credit. <strong>Processing Time:</strong> Refunds to original payment method take 5-7 business days. Wallet refunds are instant. No questions asked policy!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>💎 Is there a minimum order amount?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, the minimum order amount is <strong>Rs. 100</strong>. Orders below Rs. 200 have a delivery fee of Rs. 30. Orders above Rs. 200 enjoy <strong>FREE delivery</strong> across campus! Group orders (3+ people) get free delivery regardless of amount.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>📱 Can I save my payment methods?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Save up to 5 payment methods for quick checkout. Your card details are tokenized and encrypted. Delete saved cards anytime from Account → Payment Methods. We <strong>never</strong> store CVV or complete card numbers on our servers.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DELIVERY FAQ -->
+        <div class="faq-category" id="faq-delivery">
+            <div class="category-header">
+                <h3 class="gradient-heading">🚚 Delivery Information</h3>
+                <p>Delivery times, tracking and logistics</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>⏰ How long does delivery take?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Express Delivery:</strong> 15-20 minutes (peak hours: 20-30 min). <strong>Standard Delivery:</strong> 30-45 minutes. <strong>Schedule Later:</strong> Up to 24 hours in advance. Average campus delivery: <strong>18 minutes</strong>! Track real-time through our app with live GPS. ETA updates every 2 minutes. Rush hours: 12PM-2PM, 6PM-8PM may add 5-10 minutes.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>📍 Do you deliver to all campus locations?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We deliver to <strong>all Techspire College buildings</strong>: Hostels (A, B, C, D), Academic Blocks (Main, Engineering, Science), Library, Sports Complex, Cafeteria, Admin Block, Faculty Housing, and Parking Areas. Specify exact location (building + floor/room) at checkout. Outdoor delivery available at Basketball Court, Football Field, Central Lawn during events!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🔍 How do I track my order?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Real-Time Tracking:</strong> Open app → "My Orders" → Select active order → Live GPS map shows delivery partner location. <strong>SMS Updates:</strong> Order confirmed, Preparing, Picked up, Out for delivery, Delivered. <strong>Notifications:</strong> Push alerts at each stage. <strong>Direct Call:</strong> Contact delivery partner directly via app (number masked for privacy). No tracking? Call support immediately!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>📦 What if my order arrives late or wrong?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Late Delivery:</strong> Orders >45 min late get automatic Rs. 50 credit. Report via "Order Issue" button. <strong>Wrong Order:</strong> Keep original, we'll send correct items free + full refund. <strong>Missing Items:</strong> Instant refund or redelivery. <strong>Cold/Stale Food:</strong> Full refund + Rs. 100 apology credit. Report within 15 minutes of delivery for fastest resolution!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🚫 Can I cancel or modify my order after placing it?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Free Cancellation:</strong> Before restaurant accepts (usually 2-3 min) - instant full refund. <strong>After Acceptance:</strong> Cancellation fee Rs. 20-50 depending on prep stage. <strong>Modify Order:</strong> Call restaurant directly (number in order details) within 5 minutes. <strong>After Dispatch:</strong> Cannot cancel, but you can reject at delivery (re-stocking fee may apply). Cancel via app or call +977 9876543210 ext. 101.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>💸 Are there delivery charges?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>On-Campus:</strong> FREE for orders above Rs. 200. Below Rs. 200: Rs. 30 delivery fee. <strong>Peak Hours:</strong> No surge pricing ever! <strong>Group Orders:</strong> Free delivery regardless of amount when 3+ people order together. <strong>Express Delivery:</strong> +Rs. 20 for 15-min guarantee. <strong>Premium Members:</strong> FREE delivery on all orders + priority dispatch!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🌧️ Do you deliver in bad weather?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We deliver in <strong>all weather conditions</strong> with some adjustments. Heavy rain may add 10-15 minutes. Our delivery partners are equipped with insulated bags and rain gear. Safety first: We pause deliveries during severe storms or campus safety alerts. You'll be notified immediately with full refund option.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>👥 Can I place a group order?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! Use our <strong>"Group Order" feature</strong>: (1) Start a group order, (2) Share link with friends, (3) Everyone adds items to shared cart, (4) One person checks out or split payment equally. <strong>Benefits:</strong> FREE delivery, bulk discounts on select items, single delivery to one location. Perfect for study groups, dorm parties, class events!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACCOUNT FAQ -->
+        <div class="faq-category" id="faq-account">
+            <div class="category-header">
+                <h3 class="gradient-heading">👤 Account Management</h3>
+                <p>Managing your account and orders</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>📝 How do I create an account?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>3 Easy Ways:</strong> (1) <strong>Student Email:</strong> Use your .edu email for instant student verification. (2) <strong>Mobile Number:</strong> OTP-based signup in 30 seconds. (3) <strong>Social Login:</strong> Google/Facebook single-click signup. Fill in basic details (name, campus address) and start ordering! New users get Rs. 100 welcome credit automatically added to wallet.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🔐 How do I reset my password?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Click <strong>"Forgot Password"</strong> on login screen → Enter registered email/mobile → Receive OTP/reset link → Create new password (min 8 characters, 1 uppercase, 1 number). <strong>Alternative:</strong> Email support@canteengo.com with registered email. <strong>Security:</strong> We'll verify your identity via registered phone for security. Password reset links expire in 15 minutes.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🎯 What is the loyalty program?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>CanteenGo Points:</strong> Earn 1 point per Rs. 100 spent (1 point = Rs. 1). <strong>Tiers:</strong> Bronze (0-499 pts), Silver (500-999), Gold (1000+) with increasing benefits. <strong>Gold Perks:</strong> 2x points, free delivery, birthday meal, early access to offers, priority support. <strong>Redeem:</strong> Minimum 100 points. <strong>Referrals:</strong> 100 bonus points per friend. Points never expire!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>📧 How do I update my profile information?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Go to <strong>Profile → Edit Details</strong>. Update: Name, Email (requires verification), Phone (OTP required), Profile Picture, Default Address, Dietary Preferences (veg/non-veg/vegan), Allergen Warnings. <strong>Saved Addresses:</strong> Add multiple delivery locations. <strong>Privacy:</strong> Control what delivery partners see. Changes save automatically. Email change requires re-verification within 24 hours.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>📜 Where can I view my order history?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>App/Website:</strong> Menu → "My Orders" → Filter by: All, Delivered, Cancelled, Scheduled. <strong>Details Shown:</strong> Order date/time, items, restaurant, amount, delivery person, rating. <strong>Actions:</strong> Reorder with 1-click, Download invoice, Report issue, Rate order. <strong>Export:</strong> Download complete order history as PDF for expense tracking. <strong>Search:</strong> Find orders by restaurant name, dish, or date range.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🗑️ How do I delete my account?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Go to <strong>Settings → Account → Delete Account</strong>. <strong>Before Deletion:</strong> Complete pending orders, withdraw wallet balance, cancel subscriptions. <strong>Process:</strong> 7-day grace period (can restore anytime). <strong>What's Deleted:</strong> Profile, order history, saved cards, addresses. <strong>What's Retained:</strong> Financial records (legal requirement). <strong>Alternative:</strong> Deactivate temporarily without deletion. Email support@canteengo.com for assistance.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🔔 How do I manage notifications?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Go to <strong>Settings → Notifications</strong>. Customize: <strong>Order Updates</strong> (confirmations, tracking), <strong>Offers & Promotions</strong> (deals, discounts), <strong>Account Activity</strong> (security alerts), <strong>Restaurant News</strong> (new menus, items). Choose delivery method: Push notifications, SMS, Email. Recommended: Keep order updates ON for real-time tracking!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>💰 What is the wallet feature?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>CanteenGo Wallet:</strong> Store money for faster checkout. <strong>Add Money:</strong> Via card, bank transfer, or digital wallets (min Rs. 100). <strong>Benefits:</strong> Instant payments, exclusive wallet-only offers, earn 2% cashback on wallet recharge. <strong>Use:</strong> Select wallet at payment, amount deducted automatically. <strong>Withdraw:</strong> To bank account (3-5 days). <strong>Max Balance:</strong> Rs. 10,000 for security.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MORE HELP FAQ -->
+        <div class="faq-category" id="faq-help">
+            <div class="category-header">
+                <h3 class="gradient-heading">💬 More Help & Support</h3>
+                <p>Contact support for unresolved queries</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>⚡ How quickly will I get a response?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Live Chat:</strong> Instant response 24/7 (AI bot + human agents). <strong>Phone:</strong> Immediate connection Mon-Fri 9AM-8PM, Sat-Sun 9AM-6PM. <strong>Email:</strong> Within 4 hours on business days (24 hours max). <strong>Emergency Hotline:</strong> Instant 24/7 support for urgent order issues. <strong>Average Response:</strong> Chat: 90 seconds, Email: 2 hours, Phone: Immediate.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>💡 What's the best way to contact support?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>For <strong>immediate help</strong>, use Live Chat (24/7) or call +977 9876543210 during business hours. For <strong>detailed issues with screenshots</strong>, email support@canteengo.com. For <strong>urgent order problems</strong>, call emergency hotline +977 9876543211. For <strong>feedback/suggestions</strong>, use in-app feedback form. For <strong>complaints</strong>, escalate to complaints@canteengo.com.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🏢 Can I visit your office in person?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We're at <strong>Techspire College, Kathmandu</strong> - Student Center, Building A, 2nd Floor, Office 201. <strong>Walk-in Hours:</strong> Mon-Fri 9AM-6PM, Sat 10AM-4PM, Sunday Closed. <strong>Appointments:</strong> Call ahead at +977 9876543210 for guaranteed service. <strong>What to Bring:</strong> Order ID, registered phone for identity verification. <strong>Parking:</strong> Free campus parking available.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>📞 Do you offer phone support?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Call <strong>+977 9876543210</strong> for our main line. <strong>Extensions:</strong> Orders & Delivery (101), Restaurant Partners (102), Tech Support (103), Billing & Payments (104), Student Programs (105), Marketing & PR (106). <strong>Emergency Hotline:</strong> +977 9876543211 (24/7 for urgent order issues). <strong>International:</strong> WhatsApp +977 9876543210 for free calling.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🌙 What if I need help outside business hours?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No problem! Our <strong>Live Chat is 24/7</strong> with AI assistance + night shift agents for urgent issues. For order problems after hours, call <strong>Emergency Hotline: +977 9876543211</strong> (dedicated to delivery emergencies). <strong>Email Anytime:</strong> support@canteengo.com - we respond first thing next business day. <strong>Self-Service:</strong> App Help Center has instant solutions for common issues!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>📦 How do I report a problem with my order?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Report Immediately:</strong> (1) In-app "Report Issue" button on active order, (2) Call +977 9876543210 ext. 101, (3) Live chat with order number ready, (4) Email with order details + photos. <strong>Response Time:</strong> Issues resolved within 15 minutes! <strong>Common Issues:</strong> Wrong items, missing items, cold food, late delivery, quality issues. <strong>Resolution:</strong> Refund, redelivery, or credit - your choice!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🤝 How do I become a restaurant partner?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Email <strong>partners@canteengo.com</strong> or call +977 9876543210 ext. 102. <strong>Requirements:</strong> Valid business license, food safety certification, consistent quality. <strong>Benefits:</strong> Access to 5,000+ campus customers, digital menu management, real-time analytics, marketing support. <strong>Commission:</strong> 15-20% competitive rates. <strong>Onboarding:</strong> 3-5 days setup, free photography, menu digitization. We welcome all cuisines!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>💼 Are you hiring delivery partners?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Apply at <strong>careers@canteengo.com</strong> with: Name, Phone, Valid Driving License, Vehicle Details (bike/bicycle). <strong>Requirements:</strong> 18+ years, smartphone, campus knowledge. <strong>Earnings:</strong> Rs. 50-80 per delivery + tips + bonuses. <strong>Flexible Hours:</strong> Choose your shifts. <strong>Benefits:</strong> Accident insurance, fuel allowance, incentives. <strong>Training:</strong> 1-day paid orientation. Join our 50+ delivery team!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🍽️ How can I suggest a new restaurant?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We love suggestions! Use <strong>in-app "Suggest Restaurant"</strong> feature or email suggestions@canteengo.com with: Restaurant name, location, cuisine type, why you love it. <strong>Rewards:</strong> If your suggestion gets onboarded, you receive Rs. 500 wallet credit + free first order from that restaurant! We review all suggestions monthly.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🔒 How is my data protected?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Privacy First:</strong> We never sell your data. <strong>Security Measures:</strong> SSL encryption, secure servers, regular security audits, GDPR-compliant data handling. <strong>Your Rights:</strong> Access, export, or delete your data anytime. <strong>Sharing:</strong> Only with restaurants (order details) and delivery partners (name, address). Read full <a href="privacy.html" style="color: #667eea; font-weight: 600;">Privacy Policy</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CTA SECTION ================= -->
+<section class="content-section">
+    <div class="cta-section">
+        <h2>Still Have Questions?</h2>
+        <p>Our friendly support team is ready to help you 24/7</p>
+        <div class="cta-buttons">
+            <button class="cta-btn cta-btn-primary" onclick="alert('Live chat opening soon! Use email: support@canteengo.com')">Start Live Chat</button>
+            <a href="16message.html" class="cta-btn cta-btn-secondary">Contact Support</a>
+            <a href="17question.html" class="cta-btn cta-btn-secondary">Help Center</a>
+        </div>
+    </div>
+</section>
+
+<!-- ================= MODERN FOOTER ================= -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-brand" onclick="location.href='1herosec.html'" style="cursor: pointer;">
+            <h2>🍴 CanteenGo</h2>
+            <p>Your Campus Food Partner. Fast. Fresh. Reliable.</p>
+        </div>
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="11about.html">About Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#" onclick="alert('Join our team! Send your resume to careers@canteengo.com'); return false;">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="17question.html">Help Center</a></li>
+                    <li><a href="16message.html">Contact</a></li>
+                    <li><a href="16message.html">Report Issue</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Account</h4>
+                <ul>
+                    <li><a href="#" onclick="openLoginModal(); return false;">Login</a></li>
+                    <li><a href="#" onclick="alert('Profile feature coming soon! Currently in development.'); return false;">Profile</a></li>
+                    <li><a href="#" onclick="openCart(); return false;">Orders</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 CanteenGo. All Rights Reserved. | Designed by CanteenGo</p>
+    </div>
+</footer>
+
+<!-- ================= LOGIN MODAL ================= -->
+<div id="loginModal" class="modal">
+    <div class="modal-content" style="max-width: 450px;">
+        <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+        <h2 style="text-align: center; margin-bottom: 20px;">Login to CanteenGo</h2>
+        
+        <form onsubmit="return handleLogin(event)" style="display: flex; flex-direction: column; gap: 15px;">
+            <div>
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Email or Username</label>
+                <input type="text" id="login-username" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
+            </div>
+            
+            <div>
+                <label style="display: block; margin-bottom: 5px; font-weight: 600;">Password</label>
+                <input type="password" id="login-password" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                    <input type="checkbox" style="cursor: pointer;">
+                    <span style="font-size: 14px;">Remember me</span>
+                </label>
+                <a href="#" onclick="alert('Please contact support at support@canteengo.com to reset your password.'); return false;" style="font-size: 14px; color: #667eea; text-decoration: none;">Forgot Password?</a>
+            </div>
+            
+            <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; margin-top: 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 16px;">Login</button>
+            
+            <p style="text-align: center; margin-top: 15px; font-size: 14px; color: #666;">
+                Don't have an account? 
+                <a href="#" onclick="alert('Registration feature coming soon!'); return false;" style="color: #667eea; text-decoration: none; font-weight: 600;">Sign Up</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+<!-- ================= RESTAURANT SELECTOR MODAL ================= -->
+<div id="restaurantSelectorModal" class="modal">
+    <div class="modal-content" style="max-width: 900px;">
+        <span class="close-btn" onclick="closeRestaurantSelector()">&times;</span>
+        <h2 style="text-align: center; margin-bottom: 10px;">Choose Your Restaurant</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 25px;">Select a restaurant to view their menu and start ordering</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <div onclick="openRestaurantMenuModal('Samaya Rooftop Garden', 'Nepali')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🏔️</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Samaya Rooftop Garden</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Nepali Cuisine • ⭐ 4.9</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Walnut Bistro', 'Indian')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍛</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Walnut Bistro</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Indian Cuisine • ⭐ 4.8</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Nepalaya Rooftop', 'Chinese')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🥡</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Nepalaya Rooftop</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Chinese Cuisine • ⭐ 4.7</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Sicily By Ts', 'Italian')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍕</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Sicily By Ts</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Italian Cuisine • ⭐ 4.6</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Fresh Bowl Kitchen', 'Healthy')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🥗</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Fresh Bowl Kitchen</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Healthy Cuisine • ⭐ 4.8</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Burger Junction', 'Fast Food')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍔</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Burger Junction</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Fast Food • ⭐ 4.5</p>
+            </div>
+            
+            <div onclick="openRestaurantMenuModal('Sweet Paradise', 'Desserts')" style="border: 2px solid #ddd; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <div style="font-size: 40px; text-align: center; margin-bottom: 10px;">🍰</div>
+                <h3 style="margin: 0 0 8px 0; text-align: center; font-size: 18px;">Sweet Paradise</h3>
+                <p style="margin: 0; color: #666; text-align: center; font-size: 14px;">Desserts • ⭐ 4.9</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= RESTAURANT MENU MODAL ================= -->
+<div id="restaurantMenuModal" class="modal">
+    <div class="modal-content" style="max-width: 1000px; max-height: 90vh; overflow-y: auto;">
+        <span class="close-btn" onclick="closeRestaurantMenuModal()">&times;</span>
+        <h2 id="restaurant-name" style="text-align: center; margin-bottom: 5px;"></h2>
+        <p id="restaurant-cuisine" style="text-align: center; color: #666; margin-bottom: 25px;"></p>
+        
+        <div id="restaurant-menu-items"></div>
+    </div>
+</div>
+
+<!-- ================= SEARCH MODAL ================= -->
+<div id="searchModal" class="modal">
+    <div class="modal-content" style="max-width: 700px;">
+        <span class="close-btn" onclick="closeSearch()">&times;</span>
+        <h2>Search Menu</h2>
+        
+        <input type="text" id="searchInput" placeholder="Search for dishes, restaurants, combos..." 
+               style="width: 100%; padding: 12px; margin: 15px 0; font-size: 16px; border: 2px solid #ddd; border-radius: 8px;" 
+               oninput="performSearch()" autofocus>
+        
+        <div id="searchResults" style="max-height: 400px; overflow-y: auto; margin-top: 20px;">
+            <p style="text-align: center; color: #666;">Start typing to search...</p>
+        </div>
+    </div>
+</div>
+
+<!-- ================= CART MODAL ================= -->
+<div id="cartModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeCart()">&times;</span>
+        <h2>Your Order List</h2>
+        <ul id="cart-items"></ul>
+        <h3>Total: Rs. <span id="cart-total">0</span></h3>
+        <button class="btn-primary" onclick="openPayment()">Checkout</button>
+    </div>
+</div>
+
+<!-- ================= PAYMENT MODAL ================= -->
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closePaymentModal()">&times;</span>
+        <h2>Payment</h2>
+        <form id="paymentForm" onsubmit="return processPayment(event)">
+            <label>Full Name</label>
+            <input type="text" id="payer-name" required>
+            <label>Card Number</label>
+            <input type="text" id="card-number" maxlength="19" placeholder="0000 0000 0000 0000" required>
+            <label>Expiry (MM/YY)</label>
+            <input type="text" id="card-expiry" maxlength="5" placeholder="MM/YY" required>
+            <label>CVV</label>
+            <input type="password" id="card-cvv" maxlength="4" required>
+            <p>Total: Rs. <span id="payment-amount">0</span></p>
+            <button type="submit" class="btn-primary">Pay Now</button>
+        </form>
+    </div>
+</div>
+
+<script>
+// Close when clicking outside any modal
+window.onclick = function(e) {
+    ['cartModal', 'paymentModal', 'searchModal', 'restaurantSelectorModal', 'restaurantMenuModal', 'loginModal'].forEach(id => {
+        const m = document.getElementById(id);
+        if (m && e.target === m) m.style.display = 'none';
+    });
+}
+
+// ================= LOGIN MODAL =================
+function openLoginModal() {
+    document.getElementById('loginModal').style.display = 'flex';
+}
+
+function closeLoginModal() {
+    document.getElementById('loginModal').style.display = 'none';
+    document.getElementById('login-username').value = '';
+    document.getElementById('login-password').value = '';
+}
+
+function handleLogin(e) {
+    e.preventDefault();
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+    
+    if (username && password) {
+        alert('Login successful! Welcome to CanteenGo, ' + username + '!');
+        closeLoginModal();
+    } else {
+        alert('Please enter both username and password.');
+    }
+    return false;
+}
+
+// =================RESTAURANT SELECTOR & MENU =================
+function openRestaurantSelector() {
+    document.getElementById('restaurantSelectorModal').style.display = 'flex';
+}
+
+function closeRestaurantSelector() {
+    document.getElementById('restaurantSelectorModal').style.display = 'none';
+}
+
+const restaurantMenus = {
+    'Nepali': [
+        {name: 'Dal Bhat Set', price: 250, category: 'Main Course'},
+        {name: 'Chicken Momo (10 pcs)', price: 150, category: 'Appetizer'},
+        {name: 'Veg Momo (10 pcs)', price: 130, category: 'Appetizer'},
+        {name: 'Thakali Thali', price: 350, category: 'Main Course'},
+        {name: 'Newari Khaja Set', price: 400, category: 'Specialty'},
+        {name: 'Chatamari', price: 120, category: 'Snacks'},
+        {name: 'Sel Roti (5 pcs)', price: 100, category: 'Snacks'},
+        {name: 'Yomari (3 pcs)', price: 150, category: 'Dessert'},
+        {name: 'Gundruk Soup', price: 100, category: 'Soup'},
+        {name: 'Aloo Tama', price: 180, category: 'Side Dish'}
+    ],
+    'Indian': [
+        {name: 'Butter Chicken', price: 380, category: 'Main Course'},
+        {name: 'Chicken Biryani', price: 320, category: 'Rice'},
+        {name: 'Paneer Tikka Masala', price: 280, category: 'Main Course'},
+        {name: 'Garlic Naan', price: 50, category: 'Bread'},
+        {name: 'Tandoori Chicken', price: 350, category: 'Tandoori'},
+        {name: 'Palak Paneer', price: 250, category: 'Vegetarian'},
+        {name: 'Chicken Tikka', price: 320, category: 'Tandoori'},
+        {name: 'Masala Dosa', price: 180, category: 'South Indian'},
+        {name: 'Samosa (2 pcs)', price: 60, category: 'Snacks'},
+        {name: 'Gulab Jamun', price: 100, category: 'Dessert'}
+    ],
+    'Chinese': [
+        {name: 'Chicken Fried Rice', price: 280, category: 'Rice'},
+        {name: 'Veg Chowmein', price: 220, category: 'Noodles'},
+        {name: 'Chicken Chowmein', price: 250, category: 'Noodles'},
+        {name: 'Spring Rolls (6 pcs)', price: 180, category: 'Appetizer'},
+        {name: 'Sweet & Sour Chicken', price: 340, category: 'Main Course'},
+        {name: 'Manchurian', price: 280, category: 'Main Course'},
+        {name: 'Hakka Noodles', price: 260, category: 'Noodles'},
+        {name: 'Fried Momo (10 pcs)', price: 170, category: 'Appetizer'},
+        {name: 'Hot & Sour Soup', price: 150, category: 'Soup'},
+        {name: 'Kung Pao Chicken', price: 360, category: 'Main Course'}
+    ],
+    'Italian': [
+        {name: 'Margherita Pizza', price: 550, category: 'Pizza'},
+        {name: 'Pepperoni Pizza', price: 650, category: 'Pizza'},
+        {name: 'Carbonara Pasta', price: 450, category: 'Pasta'},
+        {name: 'Alfredo Pasta', price: 420, category: 'Pasta'},
+        {name: 'Lasagna', price: 520, category: 'Baked'},
+        {name: 'Garlic Bread', price: 150, category: 'Sides'},
+        {name: 'Bruschetta', price: 180, category: 'Appetizer'},
+        {name: 'Ravioli', price: 480, category: 'Pasta'},
+        {name: 'Tiramisu', price: 250, category: 'Dessert'},
+        {name: 'Panna Cotta', price: 220, category: 'Dessert'}
+    ],
+    'Healthy': [
+        {name: 'Green Goddess Bowl', price: 380, category: 'Bowls'},
+        {name: 'Mediterranean Bowl', price: 389, category: 'Bowls'},
+        {name: 'Quinoa Power Bowl', price: 420, category: 'Bowls'},
+        {name: 'Greek Salad', price: 280, category: 'Salads'},
+        {name: 'Caesar Salad', price: 260, category: 'Salads'},
+        {name: 'Avocado Toast', price: 250, category: 'Toast'},
+        {name: 'Smoothie Bowl', price: 320, category: 'Bowls'},
+        {name: 'Fruit Salad', price: 200, category: 'Salads'},
+        {name: 'Green Smoothie', price: 180, category: 'Drinks'},
+        {name: 'Protein Bowl', price: 450, category: 'Bowls'}
+    ],
+    'Fast Food': [
+        {name: 'Classic Burger', price: 180, category: 'Burgers'},
+        {name: 'Cheese Burger', price: 220, category: 'Burgers'},
+        {name: 'Chicken Burger', price: 250, category: 'Burgers'},
+        {name: 'French Fries', price: 100, category: 'Sides'},
+        {name: 'Loaded Fries', price: 180, category: 'Sides'},
+        {name: 'Chicken Wings (8 pcs)', price: 280, category: 'Snacks'},
+        {name: 'Chicken Nuggets (10 pcs)', price: 220, category: 'Snacks'},
+        {name: 'Hot Dog', price: 150, category: 'Snacks'},
+        {name: 'Onion Rings', price: 120, category: 'Sides'},
+        {name: 'Milkshake', price: 180, category: 'Drinks'}
+    ],
+    'Desserts': [
+        {name: 'Red Velvet Cake', price: 200, category: 'Cakes'},
+        {name: 'Chocolate Cake', price: 180, category: 'Cakes'},
+        {name: 'Cheesecake', price: 250, category: 'Cakes'},
+        {name: 'Vanilla Ice Cream', price: 120, category: 'Ice Cream'},
+        {name: 'Chocolate Ice Cream', price: 120, category: 'Ice Cream'},
+        {name: 'Brownie Sundae', price: 220, category: 'Special'},
+        {name: 'Tiramisu', price: 250, category: 'Italian'},
+        {name: 'Donut (3 pcs)', price: 150, category: 'Pastries'},
+        {name: 'Chocolate Mousse', price: 180, category: 'Special'},
+        {name: 'Apple Pie', price: 200, category: 'Pies'},
+        {name: 'Cupcake (2 pcs)', price: 140, category: 'Cakes'},
+        {name: 'Waffle with Ice Cream', price: 280, category: 'Special'}
+    ]
+};
+
+function openRestaurantMenuModal(restaurantName, cuisine) {
+    closeRestaurantSelector();
+    document.getElementById('restaurant-name').innerText = restaurantName;
+    document.getElementById('restaurant-cuisine').innerText = cuisine + ' Cuisine';
+    
+    const menuItems = restaurantMenus[cuisine] || [];
+    const categories = {};
+    menuItems.forEach(item => {
+        if (!categories[item.category]) categories[item.category] = [];
+        categories[item.category].push(item);
+    });
+    
+    let menuHTML = '';
+    for (const [category, items] of Object.entries(categories)) {
+        menuHTML += `
+            <div style="margin-bottom: 30px;">
+                <h3 style="padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #667eea; margin-bottom: 15px;">${category}</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px;">
+        `;
+        
+        items.forEach(item => {
+            menuHTML += `
+                <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; background: #fff; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
+                    <h4 style="margin: 0 0 8px 0; font-size: 16px; color: #333;">${item.name}</h4>
+                    <p style="margin: 0 0 12px 0; font-size: 18px; font-weight: bold; color: #667eea;">Rs. ${item.price}</p>
+                    <button onclick="addToCart('${item.name}', ${item.price}); showAddedToast()" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Add to Cart</button>
+                </div>
+            `;
+        });
+        
+        menuHTML += `</div></div>`;
+    }
+    
+    document.getElementById('restaurant-menu-items').innerHTML = menuHTML;
+    document.getElementById('restaurantMenuModal').style.display = 'flex';
+}
+
+function closeRestaurantMenuModal() {
+    document.getElementById('restaurantMenuModal').style.display = 'none';
+}
+
+// ================= SEARCH FUNCTIONALITY =================
+const searchableItems = [
+    {name: 'Cheese Burger', price: 180, category: 'Burger', page: 'Home', type: 'dish'},
+    {name: 'Margherita Pizza', price: 550, category: 'Pizza', page: 'Home', type: 'dish'},
+    {name: 'Chicken Momo', price: 150, category: 'Momo', page: 'Home', type: 'dish'},
+    {name: 'Grilled Sandwich', price: 120, category: 'Sandwich', page: 'Home', type: 'dish'},
+    {name: 'Veg Chowmein', price: 140, category: 'Noodles', page: 'Home', type: 'dish'},
+    {name: 'French Fries', price: 100, category: 'Sides', page: 'Home', type: 'dish'},
+    {name: 'Samaya Rooftop Garden', cuisine: 'Nepali', rating: '4.9', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Walnut Bistro', cuisine: 'Indian', rating: '4.8', page: 'Restaurants', type: 'restaurant'},
+    {name: 'Nepalaya Rooftop', cuisine: 'Chinese', rating: '4.7', page: 'Restaurants', type: 'restaurant'}
+];
+
+function openSearch() {
+    document.getElementById('searchModal').style.display = 'flex';
+    setTimeout(() => document.getElementById('searchInput').focus(), 100);
+}
+
+function closeSearch() {
+    document.getElementById('searchModal').style.display = 'none';
+    document.getElementById('searchInput').value = '';
+    document.getElementById('searchResults').innerHTML = '<p style="text-align: center; color: #666;">Start typing to search...</p>';
+}
+
+function performSearch() {
+    const query = document.getElementById('searchInput').value.toLowerCase().trim();
+    const resultsContainer = document.getElementById('searchResults');
+    
+    if (query === '') {
+        resultsContainer.innerHTML = '<p style="text-align: center; color: #666;">Start typing to search...</p>';
+        return;
+    }
+    
+    const results = searchableItems.filter(item => 
+        item.name.toLowerCase().includes(query) || 
+        (item.category && item.category.toLowerCase().includes(query)) ||
+        (item.cuisine && item.cuisine.toLowerCase().includes(query))
+    );
+    
+    if (results. === 0) {
+        resultsContainer.innerHTML = '<p style="text-align: center; color: #666;">No results found for "' + query + '"</p>';
+        return;
+    }
+    
+    let html = '<div style="display: grid; gap: 15px;">';
+    results.forEach(item => {
+        if (item.type === 'restaurant') {
+            html += `
+                <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; display: flex; justify-content: space-between; align-items: center; background: #f9f9f9;">
+                    <div>
+                        <h3 style="margin: 0 0 5px 0; font-size: 16px;">${item.name}</h3>
+                        <p style="margin: 0; color: #666; font-size: 14px;">${item.cuisine} • ⭐ ${item.rating}</p>
+                    </div>
+                    <button onclick='window.location.href="8restaurants.html"' style="padding: 8px 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; cursor: pointer;">View</button>
+                </div>
+            `;
+        } else {
+            html += `
+                <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h3 style="margin: 0 0 5px 0; font-size: 16px;">${item.name}</h3>
+                        <p style="margin: 0; color: #666; font-size: 14px;">${item.category} • Rs. ${item.price}</p>
+                    </div>
+                    <button onclick='addToCart("${item.name}", ${item.price}); showAddedToast()' style="padding: 8px 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; cursor: pointer;">Add to Cart</button>
+                </div>
+            `;
+        }
+    });
+    html += '</div>';
+    resultsContainer.innerHTML = html;
+}
+
+function showAddedToast() {
+    const toast = document.createElement('div');
+    toast.innerText = '✓ Added to cart!';
+    toast.style.cssText = 'position: fixed; bottom: 30px; right: 30px; background: #10b981; color: white; padding: 15px 25px; border-radius: 8px; font-weight: 600; z-index: 10000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);';
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2000);
+}
+
+// ================= CART FUNCTIONALITY =================
+let cart = [];
+
+function addToCart(name, price) {
+    cart.push({name, price});
+    updateCart();
+}
+
+function updateCart() {
+    document.getElementById("cart-count").innerText = cart.length;
+    let cartItems = document.getElementById("cart-items");
+    let total = 0;
+    cartItems.innerHTML = "";
+
+    cart.forEach((item, idx) => {
+        let li = document.createElement("li");
+        li.innerText = item.name + " - Rs. " + item.price;
+        let remove = document.createElement('button');
+        remove.innerText = 'Remove';
+        remove.style.marginLeft = '10px';
+        remove.onclick = function() { cart.splice(idx,1); updateCart(); };
+        li.appendChild(remove);
+        cartItems.appendChild(li);
+        total += item.price;
+    });
+
+    document.getElementById("cart-total").innerText = total;
+}
+
+function openCart() {
+    updateCart();
+    document.getElementById("cartModal").style.display = "flex";
+}
+
+function closeCart() {
+    document.getElementById("cartModal").style.display = "none";
+}
+
+function openPayment() {
+    if (cart.length === 0) {
+        alert('Your cart is empty. Add items first.');
+        return;
+    }
+    const total = cart.reduce((s, i) => s + i.price, 0);
+    document.getElementById('payment-amount').innerText = total;
+    document.getElementById('paymentModal').style.display = 'flex';
+}
+
+function closePaymentModal() {
+    document.getElementById('paymentModal').style.display = 'none';
+}
+
+function processPayment(e) {
+    e.preventDefault();
+    const name = document.getElementById('payer-name').value.trim();
+    const card = document.getElementById('card-number').value.replace(/\s+/g, '');
+    const exp = document.getElementById('card-expiry').value.trim();
+    const cvv = document.getElementById('card-cvv').value.trim();
+
+    if (!name || card.length < 13 || !/^[0-9]+$/.test(card) || !/^\d{2}\/\d{2}$/.test(exp) || cvv.length < 3) {
+        alert('Please enter valid payment details.');
+        return false;
+    }
+
+    const payBtn = document.querySelector('#paymentForm button[type=submit]');
+    payBtn.disabled = true;
+    payBtn.innerText = 'Processing...';
+
+    setTimeout(() => {
+        payBtn.disabled = false;
+        payBtn.innerText = 'Pay Now';
+        alert('Payment successful! Thank you for your order.');
+        cart = [];
+        updateCart();
+        closePaymentModal();
+        closeCart();
+        document.getElementById('paymentForm').reset();
+    }, 1000);
+
+    return false;
+}
+
+// ================= FAQ CATEGORY SWITCHING =================
+function showFaqCategory(category) {
+    // Hide all categories
+    document.querySelectorAll('.faq-category').forEach(cat => {
+        cat.classList.remove('active');
+    });
+    
+    // Show selected category
+    document.getElementById('faq-' + category).classList.add('active');
+    
+    // Update button styles
+    document.querySelectorAll('.faq-tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Highlight active button
+    event.target.classList.add('active');
+}
+
+// ================= FAQ SEARCH =================
+function searchFAQ() {
+    const query = document.getElementById('faqSearchInput').value.toLowerCase().trim();
+    
+    if (query === '') {
+        // Reset all FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.style.display = 'block';
+        });
+        return;
+    }
+    
+    // Search through all FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+        const answer = item.querySelector('.faq-answer p').textContent.toLowerCase();
+        
+        if (question.includes(query) || answer.includes(query)) {
+            item.style.display = 'block';
+            // Highlight the match
+            item.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(249, 147, 251, 0.1) 100%)';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// ================= FAQ TOGGLE =================
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.faq-item').forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            const isOpen = item.classList.contains('active');
+            
+            // Close all items in the current category
+            item.closest('.faq-category').querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+            });
+            
+            if (!isOpen) {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // Search button
+    const searchBtn = document.getElementById('searchBtn');
+    if (searchBtn) {
+        searchBtn.addEventListener('click', openSearch);
+    }
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    const body = document.body;
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+/* General page styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Section container */
+.how-it-works {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Section heading */
+.how-it-works h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* Steps layout */
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Individual step card */
+.step {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+/* Step number */
+.step-number {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #ff5722;
+  margin-bottom: 10px;
+}
+
+/* Step title */
+.step h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+/* Step description */
+.step p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,834 @@
+/* ================= CANTEENGO BRAND COLORS ================= */
+:root {
+  --primary-purple: #7B68EE;
+  --vibrant-purple: #6C63FF;
+  --primary-pink: #E91E63;
+  --secondary-purple: #9D8DF1;
+  --secondary-pink: #FF4081;
+  --text-dark: #1a1a2e;
+  --text-gray: #6b7280;
+  --text-light: #9ca3af;
+  --bg-light: #f8f9fc;
+  --border-light: #e5e7eb;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ================= CONTACT HERO SECTION ================= */
+.contact-hero {
+  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+  padding: 140px 20px 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.contact-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact-hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--white);
+  margin: 20px 0;
+  line-height: 1.2;
+}
+
+.contact-hero p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 20px auto 0;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* ================= SECTION COMMON STYLES ================= */
+.content-section {
+  padding: 100px 20px;
+  background: var(--bg-light);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink));
+  color: var(--white);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.section-title,
+.gradient-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* ================= CONTACT METHODS ================= */
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-method {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  border: 3px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 24px rgba(123, 104, 238, 0.08);
+}
+
+.contact-method:hover {
+  border-color: var(--primary-purple);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(123, 104, 238, 0.15);
+}
+
+.contact-method-icon {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.contact-method h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.contact-method-value {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 12px 0;
+}
+
+.contact-method-value a {
+  color: var(--primary-purple);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-method-value a:hover {
+  color: var(--primary-pink);
+}
+
+.contact-method-desc {
+  color: var(--text-light);
+  font-size: 14px;
+  margin: 12px 0 20px;
+}
+
+/* ================= BUTTONS ================= */
+.btn-gradient {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink));
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(123, 104, 238, 0.3);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  background: transparent;
+  color: var(--primary-purple);
+  border: 2px solid var(--primary-purple);
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-outline:hover {
+  background: var(--primary-purple);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ================= OFFICE LAYOUT ================= */
+.office-layout-wrapper {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.location-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.map-container {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid var(--border-light);
+  height: 100%;
+  min-height: 450px;
+  box-shadow: 0 4px 24px rgba(123, 104, 238, 0.08);
+}
+
+.map-container iframe {
+  border: none;
+  border-radius: 16px;
+}
+
+/* ================= CARDS ================= */
+.card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 30px;
+  border: 3px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 24px rgba(123, 104, 238, 0.08);
+}
+
+.card:hover {
+  border-color: var(--primary-purple);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(123, 104, 238, 0.15);
+}
+
+.card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.card p {
+  color: var(--text-gray);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.card-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================= BUSINESS HOURS ================= */
+.hours-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hours-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 50px 40px;
+  border: 3px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 24px rgba(123, 104, 238, 0.08);
+}
+
+.hours-card:hover {
+  border-color: var(--primary-purple);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(123, 104, 238, 0.15);
+}
+
+.hours-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 20px 0 30px;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  background: var(--bg-light);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.hours-item:hover {
+  background: linear-gradient(135deg, rgba(123, 104, 238, 0.1), rgba(233, 30, 99, 0.1));
+}
+
+.hours-day {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 15px;
+}
+
+.hours-time {
+  color: var(--text-gray);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.hours-time.emergency {
+  color: #e53e3e;
+  font-weight: 600;
+}
+
+/* ================= CONTACT FORM ================= */
+.contact-form-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 50px 40px;
+  border: 3px solid var(--border-light);
+  box-shadow: 0 4px 24px rgba(123, 104, 238, 0.08);
+  transition: all 0.3s ease;
+}
+
+.contact-form:hover {
+  border-color: var(--primary-purple);
+  box-shadow: 0 8px 32px rgba(123, 104, 238, 0.12);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid var(--border-light);
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ================= FAQ SECTION ================= */
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.faq-item {
+  background: var(--white);
+  border-radius: 16px;
+  border: 3px solid var(--border-light);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--primary-purple);
+  box-shadow: 0 8px 24px rgba(123, 104, 238, 0.1);
+}
+
+.faq-item.active {
+  border-color: var(--primary-purple);
+  box-shadow: 0 8px 24px rgba(123, 104, 238, 0.15);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 25px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background: var(--bg-light);
+}
+
+.faq-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.faq-question h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  flex: 1;
+  margin: 0;
+}
+
+.faq-toggle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink));
+  color: var(--white);
+  border: none;
+  font-size: 24px;
+  font-weight: 300;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.faq-toggle:hover {
+  transform: scale(1.1);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+}
+
+.faq-answer p {
+  padding: 0 30px 25px 73px;
+  color: var(--text-gray);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* ================= CTA SECTION ================= */
+.cta-section {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink));
+  padding: 60px 40px;
+  border-radius: 24px;
+  color: var(--white);
+  box-shadow: 0 20px 60px rgba(123, 104, 238, 0.25);
+}
+
+.cta-section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--white);
+}
+
+.cta-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.cta-btn-primary {
+  background: var(--white);
+  color: var(--primary-purple);
+}
+
+.cta-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn-secondary {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.cta-btn-secondary:hover {
+  background: var(--white);
+  color: var(--primary-purple);
+  transform: translateY(-3px);
+}
+
+/* ================= ALERT BOXES ================= */
+.alert-info {
+  text-align: center;
+  margin-top: 40px;
+  padding: 25px;
+  background: #fff3cd;
+  border-radius: 12px;
+  border-left: 4px solid #ffc107;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alert-info p {
+  color: #856404;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ================= MODAL STYLES ================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--text-gray);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: var(--primary-purple);
+}
+
+/* ================= FAQ CATEGORY BUTTONS ================= */
+.faq-category-btn {
+  padding: 12px 28px;
+  background: white;
+  color: var(--primary-purple);
+  border: 2px solid var(--primary-purple);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.faq-category-btn.active {
+  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+  color: white;
+  border: none;
+}
+
+.faq-category-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(123, 104, 238, 0.2);
+}
+
+.faq-category {
+  display: none;
+}
+
+.faq-category h3 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: var(--primary-purple);
+}
+
+.faq-category > p {
+  text-align: center;
+  color: var(--text-gray);
+  margin-bottom: 40px;
+}
+
+.faq-grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 1024px) {
+  .contact-hero h1 {
+    font-size: 48px;
+  }
+
+  .section-title,
+  .gradient-heading {
+    font-size: 36px;
+  }
+
+  .contact-methods,
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .office-layout-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .map-container {
+    min-height: 400px;
+  }
+
+  .cta-section h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-section {
+    padding: 60px 20px;
+  }
+
+  .contact-hero {
+    padding: 120px 20px 80px;
+  }
+
+  .contact-hero h1 {
+    font-size: 38px;
+  }
+
+  .section-title,
+  .gradient-heading {
+    font-size: 32px;
+  }
+
+  .contact-methods,
+  .hours-grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-answer p {
+    padding: 0 20px 20px 60px;
+  }
+
+  .cta-section {
+    padding: 40px 30px;
+  }
+
+  .cta-section h2 {
+    font-size: 28px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero h1 {
+    font-size: 32px;
+  }
+
+  .section-title,
+  .gradient-heading {
+    font-size: 28px;
+  }
+
+  .card,
+  .hours-card,
+  .contact-form {
+    padding: 30px 20px;
+  }
+
+  .contact-method {
+    padding: 30px 20px;
+  }
+
+  .faq-question {
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .faq-question h3 {
+    font-size: 16px;
+  }
+
+  .cta-section {
+    padding: 30px 20px;
+  }
+
+  .cta-section h2 {
+    font-size: 24px;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+  }
+}
